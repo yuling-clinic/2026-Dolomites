@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>2026 Dolomites 健行逐日行程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --display:'Fraunces','Noto Serif TC',Georgia,serif;
+    --hero:'Outfit','Noto Sans TC',system-ui,sans-serif;
+    --body:'Inter','Noto Sans TC',system-ui,sans-serif;
+    --mono:'JetBrains Mono','Noto Sans TC',ui-monospace,monospace;
+    --stone:#E7E6E0;
+    --card:#FBFAF6;
+    --ink:#1F2826;
+    --slate:#5C6A6B;
+    --line:#D5D3CB;
+    --glow:#CE7E68;       /* alpenglow accent */
+    --glow-soft:#EBC9BC;
+    --pine:#3A5443;
+    /* base-town tags */
+    --c-dob:#4F6571;
+    --c-svc:#3A5443;
+    --c-sal:#8A5A4A;
+    --c-ort:#9A7A3C;
+    --c-trn:#6B6F6A;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;background:#E7E6E0;color-scheme:light only;}
+  html,body{min-height:100%;}
+  body{
+    margin:0;background:#E7E6E0 !important;color:#1F2826 !important;
+    font-family:var(--body);line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 80px;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:54px 0 30px;position:relative;}
+  .glowbar{height:5px;border-radius:4px;margin-bottom:30px;
+    background:linear-gradient(90deg,#7C8C8A 0%,var(--glow-soft) 42%,var(--glow) 60%,#B6603F 100%);}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--slate);margin:0 0 14px;}
+  .hero h1{font-family:var(--hero);font-weight:500;line-height:1.0;
+    margin:0;letter-spacing:.01em;
+    font-size:clamp(38px,10.5vw,72px);}
+  .hero h1 .yr{font-weight:300;}
+  .hero .cn{font-family:'Noto Sans TC',sans-serif;font-weight:500;
+    font-size:clamp(15px,3.6vw,19px);letter-spacing:.12em;color:var(--ink);
+    margin:13px 0 0;}
+  .hero .sub{font-family:var(--mono);font-size:13px;font-weight:500;
+    letter-spacing:.06em;color:var(--slate);margin:14px 0 0;}
+  .ridge{margin:26px 0 4px;display:block;width:100%;height:auto;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:18px 0;}
+  .meta .m{display:flex;flex-direction:column;}
+  .meta .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--slate);}
+  .meta .v{font-family:var(--display);font-size:22px;font-weight:600;}
+
+  /* ---------- BASE LEGEND ---------- */
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px;}
+  .basepill{display:inline-flex;align-items:center;gap:7px;
+    font-size:12.5px;font-weight:500;padding:5px 11px;border-radius:20px;
+    background:var(--card);border:1px solid var(--line);}
+  .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+
+  /* ---------- BEFORE YOU GO ---------- */
+  .panel{background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:24px 22px;margin:34px 0;}
+  .panel h2{font-family:var(--display);font-size:24px;font-weight:600;
+    margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+  .panel h2 .tick{font-family:var(--mono);font-size:12px;color:var(--glow);
+    border:1px solid var(--glow);border-radius:6px;padding:2px 7px;letter-spacing:.1em;}
+  .panel p.lead{color:var(--slate);margin:.2em 0 16px;font-size:14.5px;}
+  .todo{list-style:none;margin:0;padding:0;}
+  .todo li{padding:13px 0;border-top:1px solid var(--line);
+    display:flex;gap:13px;align-items:flex-start;}
+  .todo li:first-child{border-top:none;}
+  .todo .ic{flex:none;width:26px;height:26px;border-radius:8px;
+    background:var(--glow-soft);color:#9A4A30;display:grid;place-items:center;
+    font-size:14px;margin-top:1px;}
+  .todo b{font-weight:600;}
+  .todo .note{color:var(--slate);font-size:13.5px;}
+
+  /* ---------- TIMELINE ---------- */
+  .days{position:relative;margin-top:40px;padding-left:30px;}
+  .days::before{content:"";position:absolute;left:7px;top:8px;bottom:30px;
+    width:2px;background:var(--line);}
+  .day{position:relative;margin-bottom:30px;}
+  .day::before{content:"";position:absolute;left:-30px;top:9px;
+    width:16px;height:16px;border-radius:50%;border:3px solid var(--stone);
+    background:var(--c-trn);box-shadow:0 0 0 1px var(--line);}
+  .day[data-b="dob"]::before{background:var(--c-dob);}
+  .day[data-b="svc"]::before{background:var(--c-svc);}
+  .day[data-b="sal"]::before{background:var(--c-sal);}
+  .day[data-b="ort"]::before{background:var(--c-ort);}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 20px 18px;}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;
+    gap:14px;flex-wrap:wrap;}
+  .dlabel{display:flex;align-items:baseline;gap:11px;}
+  .dnum{font-family:var(--hero);font-size:34px;font-weight:600;line-height:.9;}
+  .ddate{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--slate);}
+  .base{font-size:12.5px;font-weight:500;padding:5px 11px;border-radius:20px;
+    color:#fff;white-space:nowrap;}
+  .base.dob{background:var(--c-dob);} .base.svc{background:var(--c-svc);}
+  .base.sal{background:var(--c-sal);} .base.ort{background:var(--c-ort);}
+  .base.trn{background:var(--c-trn);}
+  .base small{opacity:.8;font-weight:400;}
+
+  .title{font-family:var(--display);font-size:21px;font-weight:600;
+    margin:13px 0 2px;letter-spacing:-.005em;}
+
+  /* transit chain — signature element */
+  .chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;
+    margin:13px 0 3px;padding:11px 12px;border-radius:11px;
+    background:#F1EFE8;border:1px dashed var(--line);}
+  .chain .node{font-size:13px;font-weight:500;}
+  .chain .seg{font-family:var(--mono);font-size:11px;font-weight:700;
+    padding:3px 7px;border-radius:6px;letter-spacing:.02em;white-space:nowrap;}
+  .seg.bus{background:#E3EAE5;color:#2F4A3C;}
+  .seg.cab{background:var(--glow-soft);color:#9A4A30;}
+  .seg.trl{background:#E7E4DA;color:#6B6256;}
+  .seg.wlk{background:#E7E4DA;color:#6B6256;}
+  .seg.fly{background:#DCE3EA;color:#3C5366;}
+  .chain .arr{color:var(--slate);font-size:12px;}
+
+  ul.plan{margin:14px 0 0;padding:0;list-style:none;}
+  ul.plan li{position:relative;padding:4px 0 4px 18px;font-size:14.5px;}
+  ul.plan li::before{content:"";position:absolute;left:2px;top:12px;
+    width:5px;height:5px;border-radius:50%;background:var(--glow);}
+  ul.plan li .t{font-family:var(--mono);font-size:11.5px;font-weight:700;
+    color:var(--pine);margin-right:6px;}
+
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .meta-chip{font-size:13px;display:inline-flex;gap:7px;align-items:center;
+    background:#F1EFE8;border:1px solid var(--line);border-radius:9px;padding:7px 11px;}
+  .meta-chip .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--slate);}
+  .warn{display:flex;gap:9px;align-items:flex-start;margin-top:13px;
+    background:#FBF0EC;border:1px solid var(--glow-soft);border-radius:10px;
+    padding:10px 12px;font-size:13px;color:#7A3A26;}
+  .warn .ic{flex:none;}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .links a{font-size:12.5px;font-weight:500;text-decoration:none;color:var(--ink);
+    background:#fff;border:1px solid var(--line);border-radius:9px;
+    padding:7px 12px;display:inline-flex;align-items:center;gap:6px;
+    transition:border-color .15s,transform .15s;}
+  .links a:hover{border-color:var(--glow);transform:translateY(-1px);}
+  .links a::after{content:"↗";font-family:var(--mono);font-size:11px;color:var(--slate);}
+
+  /* ---------- CHECK / FOOTER ---------- */
+  .check{background:#20292A;color:#E7E6E0;border-radius:16px;
+    padding:26px 22px;margin:40px 0 26px;}
+  .check h2{font-family:var(--display);font-size:23px;font-weight:600;margin:0 0 6px;color:#fff;}
+  .check p{color:#B6BDBA;font-size:14px;margin:.2em 0 16px;}
+  .check ol{margin:0;padding-left:1.2em;}
+  .check li{padding:7px 0;font-size:14px;border-top:1px solid #34403F;}
+  .check li:first-child{border-top:none;}
+  .check b{color:var(--glow-soft);}
+  footer{text-align:center;color:var(--slate);font-size:12.5px;
+    font-family:var(--mono);letter-spacing:.04em;padding-top:14px;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  @media(max-width:480px){
+    .wrap{padding:0 15px 60px;}
+    .dnum{font-size:30px;}
+    .meta{gap:10px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="glowbar"></div>
+    <p class="eyebrow">無自駕 · 公車＋纜車 · 蔬食</p>
+    <h1><span class="yr">2026</span> Dolomites</h1>
+    <p class="cn">義大利多洛米蒂山脈健行</p>
+    <p class="sub">2026 / 07 / 04 — 07 / 18</p>
+
+    <svg class="ridge" viewBox="0 0 760 70" fill="none" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 68 L120 30 L165 50 L235 8 L255 34 L300 22 L360 60 L420 18 L455 40 L520 6 L548 36 L610 26 L680 52 L760 24 L760 70 L0 70 Z"
+        fill="#DBD9D1"/>
+      <path d="M0 68 L120 30 L165 50 L235 8 L255 34 L300 22 L360 60 L420 18 L455 40 L520 6 L548 36 L610 26 L680 52 L760 24"
+        stroke="#9AA29F" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M420 18 L455 40 L520 6" stroke="var(--glow)" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="meta">
+      <div class="m"><span class="k">天數</span><span class="v">15 天</span></div>
+      <div class="m"><span class="k">基地</span><span class="v">4 處</span></div>
+      <div class="m"><span class="k">移動方式</span><span class="v">公車 · 纜車</span></div>
+      <div class="m"><span class="k">飲食</span><span class="v">蔬食</span></div>
+    </div>
+
+    <div class="legend">
+      <span class="basepill"><span class="dot" style="background:var(--c-dob)"></span>Dobbiaco · Day 1–3</span>
+      <span class="basepill"><span class="dot" style="background:var(--c-svc)"></span>San Vito · Day 4–6</span>
+      <span class="basepill"><span class="dot" style="background:var(--c-sal)"></span>Rifugio Salei · Day 7</span>
+      <span class="basepill"><span class="dot" style="background:var(--c-ort)"></span>Ortisei · Day 8–12</span>
+      <span class="basepill"><span class="dot" style="background:var(--c-trn)"></span>移動／返程</span>
+    </div>
+  </header>
+
+  <!-- BEFORE YOU GO -->
+  <section class="panel reveal">
+    <h2><span class="tick">行前</span>出發前必辦</h2>
+    <p class="lead">公車靠民宿 Guest Pass、Val Gardena 纜車靠 Gardena Card、其餘纜車買單程票。</p>
+    <ul class="todo">
+      <li><span class="ic">🎫</span><div><b>Guest Pass（民宿提供，免費）＝ 公車／火車</b><br>
+        <span class="note">涵蓋 südtirolmobil 公車與區域火車，拿了就好。但不含纜車、不含 442／444，且只在南提洛（Dobbiaco、Ortisei）有效；Cortina／San Vito 屬 Veneto 的 Dolomiti Bus 區，要另外付。</span></div></li>
+      <li><span class="ic">🚠</span><div><b>Gardena Card（你會買）＝ Val Gardena 纜車</b><br>
+        <span class="note">涵蓋 Day 9 Seceda（#2／#3／#14）、Day 10 上 Alpe di Siusi 的主纜車、Day 11 Ciampinoi 等。連續日票，約 €124（3 日）／€160（6 日），對你 7/13–7/15 那段剛好。</span></div></li>
+      <li><span class="ic">🎟️</span><div><b>單程票 ＝ Val Gardena 以外的纜車</b><br>
+        <span class="note">Day 5 五塔吊椅（Cinque Torri）、Day 6 Faloria、Day 7 Salei 都不在 Val Gardena，Gardena Card 不含 → 現場買單程票。</span></div></li>
+      <li><span class="ic">⏱️</span><div><b>Seceda 時段預約（Day 9，必做）</b><br>
+        <span class="note">2026 起 Seceda 上山改分時段。持 Gardena Card 已含車資、但仍要先到 seceda.it 用卡號選一個時段（不另收費，只是搶位）。</span></div></li>
+    </ul>
+    <div class="links">
+      <a href="https://www.suedtirolmobil.info/en/#/">Südtirolmobil 交通查詢</a>
+      <a href="https://www.gardena-card.com/en/prices.asp">Gardena Card</a>
+      <a href="https://www.seceda.it/en/summer">Seceda 時段預約</a>
+    </div>
+  </section>
+
+  <!-- DAYS -->
+  <div class="days" id="days"></div>
+
+  <!-- CONFIRMED BOOKINGS -->
+  <section class="check reveal">
+    <h2>已確認訂位</h2>
+    <p>以下根據票券更新並對齊，三峰已依指示固定在 Day 2。</p>
+    <ol>
+      <li><b>去程機票</b> TK25 / TK1867 · 7/4 21:45 TPE →(IST)→ 7/5 08:20 VCE · 經濟艙 E</li>
+      <li><b>Venice → Dobbiaco</b> Fly Bus #UVH383661 · 7/5 14:20 威尼斯機場 → 17:45 Dobbiaco · €33.50</li>
+      <li><b>442 Braies</b> 7/7 去 07:02（St.-Johannes 街）／回 13:31 · 已預約</li>
+      <li><b>Bolzano → Malpensa</b> FlixBus #3366672372 · 7/17 09:15 → 13:40 Terminal 1 · 已付</li>
+      <li><b>回程機票</b> TK1878 / TK124 · 7/18 06:50 MXP →(IST)→ 7/19 08:05 TPE · 經濟艙 W</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:4px;">出發前還要處理：</p>
+    <ol>
+      <li>Gardena Card（3 日，約 €124）— 涵蓋 Day 9–11 的 Val Gardena 纜車</li>
+      <li>Seceda 時段預約 — 用 Gardena Card 卡號到 seceda.it 選時段（不另收費，但必訂）</li>
+      <li>單程票 — Day 5 五塔吊椅、Day 6 Faloria、Day 7 Salei（非 Val Gardena，現場買）</li>
+    </ol>
+  </section>
+
+  <footer>整理自 Notion「旅行日記」＋ 訂位票券 · Day 0–14</footer>
+
+</div>
+
+<script>
+const D = [
+ {n:"00",date:"7/4 (六)",b:"trn",base:"紅眼啟程 ✈",title:"台北 → 伊斯坦堡 → 威尼斯",
+  chain:[{t:"p",v:"TPE 21:45"},{t:"fly",v:"TK25"},{t:"p",v:"IST"},{t:"fly",v:"TK1867"},{t:"p",v:"VCE 08:20⁺¹"}],
+  plan:["21:45｜台北 TPE 起飛（TK25），經伊斯坦堡 IST 轉機。",
+        "次日 08:20｜抵威尼斯 VCE，全程 16h35m，經濟艙 (E)。"],
+  tips:"夜間紅眼，落地即 7/5 早上。",
+  links:[]},
+
+ {n:"01",date:"7/5 (日)",b:"dob",base:"Dobbiaco",title:"抵達日：威尼斯半日 → Dobbiaco",
+  chain:[{t:"p",v:"VCE 08:20"},{t:"bus",v:"ATVO"},{t:"p",v:"威尼斯本島"},{t:"bus",v:"ATVO"},{t:"p",v:"VCE"},{t:"bus",v:"Fly Bus 14:20"},{t:"p",v:"Cortina"},{t:"p",v:"Dobbiaco 17:45"}],
+  plan:["08:20｜威尼斯 VCE 入境、提領行李。",
+        "08:45｜行李寄機場 Trasbagagli 寄物處（入境層、1 號出入口外，每天 06:00–20:00），輕裝進城。",
+        "09:00｜搭 ATVO 或 ACTV 5 號快線到 Piazzale Roma（約 20–25 分）。想要浪漫一點可改搭 Alilaguna 水上巴士直接駛入潟湖（較慢 ~60 分，但一路看潟湖風景）。",
+        "上午｜Piazzale Roma 換 1 號 vaporetto 沿大運河到 Rialto／San Marco，慢走聖馬可廣場、里阿爾托橋，挑一間蔬食餐廳吃午餐。",
+        "13:00｜回程返機場（ATVO／ACTV 約 20–25 分），13:30 前取回寄放行李。",
+        "14:20｜Fly Bus 自機場觀光巴士停車場發車 → 16:30 Cortina（Piazza Roma）→ 17:45 抵 Dobbiaco。座位 49／100 號車。",
+        "傍晚｜鎮上大超市（Despar／Conad）採買蔬食與健行補給；德語區麵包店與蔬食餐廳水準很高，今晚好好吃一頓。"],
+  warn:"半日遊偏緊湊：務必 13:30 前回到機場取行李、趕 14:20 Fly Bus。若航班有延誤就直接在機場休息，別硬進城。",
+  tips:"行李寄機場最省事（回程也從機場發車）。Fly Bus 訂位 UVH383661 · €33.50（已訂）。",
+  links:[]},
+
+ {n:"02",date:"7/6 (一)",b:"dob",base:"Dobbiaco",title:"魔戒尖塔 Cadini ＋ 三峰大環線",
+  chain:[{t:"p",v:"Dobbiaco"},{t:"bus",v:"444 · 07:20"},{t:"p",v:"Auronzo"},{t:"trl",v:"117"},{t:"p",v:"Cadini"},{t:"trl",v:"101→105"},{t:"p",v:"Tre Cime"},{t:"bus",v:"444 · 15:08"},{t:"p",v:"Dobbiaco"}],
+  plan:["07:20｜Dobbiaco 總站搭【已預約】444 直上 Rifugio Auronzo（2,320 m），約 08:00 抵達。",
+        "上午｜先走 117 號步道南行約 40 分到 Cadini di Misurina 尖塔群，晨光順光拍尖塔，原路折返回 Auronzo。",
+        "接著｜從 Auronzo 走經典 101→105 三峰大環線（3–4 小時），中途在山屋吃蔬食午餐（波倫塔／義大利麵）。",
+        "15:08｜搭【已預約】444 從 Auronzo 下山回 Dobbiaco，傍晚回基地泡澡休息。"],
+  warn:"已訂 444：去 07:20、回 15:08，中間約 7 小時要走完 Cadini + 三峰大環線，節奏抓緊一點。想順遊 Misurina 湖可在下山途中於湖畔下車，但就得放棄已訂的直達座位、改搭後續班次。",
+  links:[]},
+
+ {n:"03",date:"7/7 (二)",b:"dob",base:"Dobbiaco",title:"Lago di Braies 環湖 ＋ 木舟",
+  chain:[{t:"p",v:"Dobbiaco"},{t:"bus",v:"442 · 07:02"},{t:"p",v:"Braies 07:29"},{t:"bus",v:"442 · 13:31"},{t:"p",v:"Dobbiaco"}],
+  plan:["07:02｜在 Toblach St.-Johannes 街站搭【已預約】442，約 07:29 抵 Lago di Braies。",
+        "07:30｜趁清晨無人先拍照、晃一下湖畔。",
+        "08:00｜租船一開就先去排（這時幾乎不用等），划 45 分鐘——把租船放最前面，避開 9 點後的人潮與長隊。",
+        "約 09:00｜走平坦環湖步道一圈（約 3.6 km、1–1.5 小時），沿途長椅多、邊走邊放空。",
+        "午後｜湖畔咖啡／午餐，悠閒待著，13:31 搭【已預約】442 回 Dobbiaco（在湖邊約 6 小時，整個上午很從容）。"],
+  warn:"木船不能預約、只能現場買，旺季中午前後可能排到 1–2 小時 → 所以「一到先租船、再環湖」。價格：共乘約 €15–20／人、包船約 €50–55（最多 5 人），各 45 分鐘，08:00–18:00。",
+  tips:"已訂 442：去 07:02（St.-Johannes 街）、回 13:31。有線上預約，7 月旺季 9 點前進谷的限制對你不適用。",
+  links:[["442 預約 prags.bz","https://www.prags.bz/en"]]},
+
+ {n:"04",date:"7/8 (三)",b:"svc",base:"換基地 → San Vito",title:"Tiffany 藍湖 Lago di Sorapis",
+  chain:[{t:"p",v:"Dobbiaco"},{t:"bus",v:"→Cortina"},{t:"bus",v:"30/31"},{t:"p",v:"Passo Tre Croci"},{t:"trl",v:"215"},{t:"p",v:"Sorapis"},{t:"bus",v:"30/31"},{t:"bus",v:"001"},{t:"p",v:"San Vito"}],
+  plan:["早上｜Dobbiaco 退房南下。Passo Tre Croci（Sorapis 步道口，在 B&B Hotel Passo Tre Croci 旁）由 Dolomiti Bus 30/31（Cortina↔Passo Tre Croci↔Misurina）停靠，從 Dobbiaco 多半要在 Cortina 換 30/31。",
+        "健行｜走 215 號步道到 Rifugio Vandelli／Lago di Sorapis，單程約 2 小時，沿途有鋼纜輔助的窄岩徑（不難但要專心），原路折返。",
+        "下午｜回 Cortina，轉 001／Cortina Express 到 San Vito di Cadore 入住（如 Hotel Alemagna）。"],
+  warn:"行李寄放：步道口沒有正式寄物處（只有 B&B Hotel Passo Tre Croci 與小酒吧 Baito San Zuogo，能否寄放看現場、不保證）。兩個穩當作法 — ① 先到 San Vito 飯店寄行李（飯店通常願意 check-in 前代收），再搭 30/31 回 Passo Tre Croci 健行，乾淨但多一段來回；② 用 Radical Storage／Bounce App 在 Cortina 訂寄物點，路過放、健行完再取，較能保留清晨早走的優勢。",
+  tips:"Sorapis 7–8 月人潮多，越早走越清靜；鋼纜段下雨易濕滑。",
+  links:[]},
+
+ {n:"05",date:"7/9 (四)",b:"svc",base:"San Vito",title:"Passo Giau 縱走 → 五塔山 Cinque Torri",
+  chain:[{t:"p",v:"San Vito"},{t:"bus",v:"001"},{t:"p",v:"Cortina"},{t:"bus",v:"BUS"},{t:"p",v:"Passo Giau"},{t:"trl",v:"443"},{t:"p",v:"五塔山"},{t:"cab",v:"🚠"},{t:"p",v:"Bai de Dones"},{t:"bus",v:"BUS"},{t:"p",v:"Cortina"}],
+  plan:["交通｜San Vito 搭 001 到 Cortina 總站（15 分），轉地方巴士上 Passo Giau（2,236 m）。",
+        "健行｜沿 443 號步道從金字塔巨石走向五塔山（2–2.5 小時），五塔由小變大、漸漸逼近的視覺極震撼。",
+        "中午｜抵 Rifugio Scoiattoli（松鼠山屋），露台正對五塔絕壁，招牌松露菇菇手工麵（大推）。",
+        "下午｜繞五塔巨石群一圈（約 1 小時），穿梭一戰露天博物館的壕溝、砲台與防空洞。",
+        "下山｜松鼠山屋旁搭 Cinque Torri 開放式吊椅纜車（10 分）下到 Bai de Dones，轉公車回 Cortina（20 分），再 001 回 San Vito。"],
+  warn:"山頂有兩條纜車，認明指標寫 To Bai de Dones 的那條才接得到公車；別坐到往 Fedare 的反方向。",
+  tips:"五塔吊椅在 Cortina 區、不在 Val Gardena → Gardena Card 不含，現場買單程票。",
+  links:[]},
+
+ {n:"06",date:"7/10 (五)",b:"svc",base:"San Vito",title:"Cortina 貴族小鎮慢活 ＋ Faloria 纜車",
+  chain:[{t:"p",v:"San Vito"},{t:"bus",v:"001"},{t:"p",v:"Cortina"},{t:"cab",v:"Faloria 🚠"}],
+  plan:["悠閒晃進 Cortina，逛高檔戶外步行街。",
+        "搭 Faloria 纜車上觀景台，俯瞰整個安佩佐山谷，享受無車旅行的從容。"],
+  eat:"Mato Kitchen Bar",
+  tips:"Faloria 在 Cortina 區 → Gardena Card 不含，現場買單程票。",
+  links:[]},
+
+ {n:"07",date:"7/11 (六)",b:"sal",base:"Rifugio Salei 山屋",title:"跨山大移動 ＋ 上山住山屋",
+  chain:[{t:"p",v:"San Vito"},{t:"bus",v:"001"},{t:"p",v:"Cortina"},{t:"bus",v:"Cortina Exp."},{t:"p",v:"Corvara"},{t:"bus",v:"471"},{t:"p",v:"Plan de Gralba"},{t:"bus",v:"471"},{t:"p",v:"Passo Sella"},{t:"cab",v:"Salei 🚠"},{t:"p",v:"Salei"}],
+  plan:["重點｜只搭 471 到不了。471 只跑 Val Gardena／Sella／Canazei 這一側；從 San Vito／Cortina 必須先翻 Val Badia 到 Corvara，再接 471 上 Passo Sella。",
+        "08:00 前｜San Vito 搭 001 到 Cortina 總站。",
+        "Cortina → Corvara｜搭 Cortina Express／SAD 跨 Falzarego–Valparola 埡口（約 1–1.5 小時）。",
+        "Corvara → Passo Sella｜471（Corvara–Passo Gardena–Plan de Gralba），在 Plan de Gralba 轉 471 上 Passo Sella（旺季每 15 分一班）。",
+        "Passo Sella → Rifugio Salei｜搭 Salei 吊椅纜車上去，或走 657／526 號步道約 25–40 分。入住享頂級 SPA／桑拿。"],
+  warn:"要 13:00 前抵達，這段跨山轉乘銜接較緊又逢旺季：出發前一晚務必用 Südtirolmobil 或 Google 地圖大眾運輸，輸入「San Vito di Cadore → Passo Sella，7/11，13:00 前到」查當天實際班次與月台。",
+  tips:"山屋預訂確認在 Gmail。Salei 吊椅在 Passo Sella 的 Val di Fassa 側 → Gardena Card 不含，現場買單程票。",
+  links:[]},
+
+ {n:"08",date:"7/12 (日)",b:"ort",base:"進駐 → Ortisei",title:"下山進西區基地",
+  chain:[{t:"p",v:"Salei"},{t:"cab",v:"🚠"},{t:"p",v:"Passo Sella"},{t:"bus",v:"350"},{t:"p",v:"Ortisei"}],
+  plan:["下山後搭 350 公車進入 Ortisei，入住公寓（Sule Hof）。",
+        "Val Gardena 區靠公車＋纜車即可暢行，這幾天以 Ortisei 為核心放射出遊。"],
+  links:[["移動通行證 LTS Pass","https://apps.lts.it/pass-by/?token=C%2ful5FFGEJDULGliHfF7m5mcGwVQ3s22XZ2vHqjLAHHIJpHCtGecskxDGURORWyrXQAl1tphKK8yN%2bG3RXw5DNbOm8GzbCblCPaI2qbPOTw4HJ%2fGt%2bxTS2VoZb778RyKq%2bcK8091XK5ogUgh0YzkAg%3d%3d"],["Ortisei 訂房（muse.holiday）","https://www.muse.holiday/en/dolomites/weboffer/?key=942ef7f3-9fb4-4757-a01f-aac281998bab#booking"],["西區攻略 tings.tw","https://tings.tw/dolomiti-2/"]]},
+
+ {n:"09",date:"7/13 (一)",b:"ort",base:"Ortisei",title:"Seceda 刀背山（西區核心）",
+  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#2 Furnes"},{t:"cab",v:"#3 Seceda"},{t:"p",v:"Seceda 2500m"},{t:"trl",v:"6→1"},{t:"cab",v:"#14 Col Raiser"},{t:"p",v:"Ortisei"}],
+  plan:["上山（兩段）｜① Ortisei–Furnes 纜車 #2（吊廂）→ 轉 ② Furnes–Seceda 纜車 #3（更陡的大纜車），約 15 分直上 2,500 m 刀背稜線。",
+        "出站即明信片上的刀背絕壁。沿山脊 6→1 號步道緩降，沿途散落古老木造牧場山屋（Malga）。",
+        "中午蔬食｜Rifugio Odle 或 Malga Pieralongia，高山野菇波倫塔＋手工接骨木花氣泡飲（Hugo），躺草皮看雙子石塔（兔耳岩）。",
+        "下山｜走到 Col Raiser 纜車 #14（吊廂）下到 Santa Cristina，轉接駁回 Ortisei；若走 Fermeda 那側則接吊椅 #4。"],
+  warn:"Seceda 上山 #2／#3（含 Fermeda #4）是「不適用 SuperSummer，但有含在 Gardena Card」內。2026 起一律分時段：持 Gardena Card 仍要先到 seceda.it 用卡號選時段（不另收費）。建議訂早場（8:30 開門、8:15 前到最空），刀背稜線幾乎可包場。",
+  tips:"纜車編號（Val Gardena 官方）：上山 #2 Ortisei–Furnes、#3 Furnes–Seceda；下山 #14 Col Raiser；中途若用到 Fermeda 是吊椅 #4。皆含在 Gardena Card。",
+  links:[["Seceda 時段預約","https://www.seceda.it/en/summer"],
+         ["Seceda 攻略 massi.tw","https://massi.tw/dolomiti-seceda/"]]},
+
+ {n:"10",date:"7/14 (二)",b:"ort",base:"Ortisei",title:"Alpe di Siusi 大草原 ＋ 自煮時光",
+  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"🚠"},{t:"p",v:"Alpe di Siusi"},{t:"trl",v:"WALK"},{t:"p",v:"Malga Sanon"}],
+  plan:["上午錯峰｜Ortisei 搭 Alpe di Siusi 箱型纜車上台地，眼前是延伸到天邊的無垠草原，背景 Sassolungo 金字塔巨石。",
+        "慢活｜全程無障礙平坦步道走向黃金拍照點 Malga Sanon，草原放牧牛鈴叮噹。中午找視野最好的木屋餐廳，松露燉飯＋在地水果派。",
+        "傍晚｜體力消耗低，回鎮上在 Sule Hof 公寓自煮，享受兩人世界。"],
+  tips:"上 Alpe di Siusi 的主纜車（Ortisei–Alpe di Siusi）含在 Gardena Card；台地上那些小吊椅（Panorama、Bullaccia 等）不含，但通常用不到。",
+  links:[]},
+
+ {n:"11",date:"7/15 (三)",b:"ort",base:"Ortisei",title:"Sassolungo 巨石群「石頭城」",
+  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350"},{t:"p",v:"Plan de Gralba"},{t:"cab",v:"Ciampinoi 🚠"},{t:"trl",v:"526→527"},{t:"p",v:"Rif. Comici"}],
+  plan:["交通｜350 公車到 Plan de Gralba，或搭纜車到 Ciampinoi（Gardena Card 免費）。",
+        "健行｜從 Ciampinoi 繞 Sassolungo 山腳走 526→527 號步道，穿過科幻感十足的「石頭城」，身邊全是幾層樓高的巨石。",
+        "中午｜抵 Rifugio Comici（科米奇山屋），全區最時尚、有精緻蔬食，藍白露台正對絕壁用餐。"],
+  alt:"備案：也可改去 Val di Funes，或乾脆在鎮上慢活。",
+  links:[]},
+
+ {n:"12",date:"7/16 (四)",b:"ort",base:"Ortisei",title:"洋蔥頭教堂 Val di Funes ＋ 鎮上慢活",
+  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"BUS ×2"},{t:"p",v:"Val di Funes"},{t:"bus",v:"BUS"},{t:"p",v:"Ortisei"}],
+  plan:["上午｜憑 Guest Pass 或搭地方公車（轉一次車）到 Val di Funes，拍孤立在綠草地上、背景 Odle 巨壁的洋蔥頭教堂（San Giovanni in Ranui），松林步道涼爽好走。",
+        "下午｜回 Ortisei 木雕小鎮，石磚步行街選植物系手工皂／保養品，Gelateria 義式冰淇淋，噴泉旁享受最後一晚山城黃昏。"],
+  links:[]},
+
+ {n:"13",date:"7/17 (五)",b:"trn",base:"米蘭近郊",title:"離山拉車：前往 Malpensa（近機場）",
+  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350 · ~07:30"},{t:"p",v:"Bolzano ~08:30"},{t:"bus",v:"FlixBus 09:15"},{t:"p",v:"Malpensa T1 13:40"}],
+  plan:["建議｜搭約 07:30 從 Ortisei（Piazza S. Antonio）出發的 350，車程約 56 分、約 08:30 到 Bolzano，留約 45 分接 09:15 的 FlixBus。350 約每小時一班、最早約 06:26。",
+        "注意｜350 停 Bolzano 巴士總站（Autostazione），但 FlixBus 從『Bolzano South／Stazione FS（火車站）』發車，兩處步行約 5 分鐘，到場先確認 FlixBus 上車點。",
+        "09:15｜Bolzano South 搭 FlixBus → 13:40 抵 Milano Malpensa Terminal 1。",
+        "入住 Ca' del Borgo（Vizzola Ticino，近 Malpensa，約 $4,900+），方便隔天清晨班機。"],
+  warn:"350 確切分鐘以 Südtirolmobil 當日時刻為準；行李多又要轉 FlixBus，保險起見可提早一班（約 06:30）多留緩衝。",
+  tips:"FlixBus 訂位 #3366672372 · 乘客 Wan Tai Wu／Yu Ling Huang · 已付（信用卡）。",
+  links:[["飯店 Ca' del Borgo","https://www.booking.com/hotel/it/ca-del-borgo-vizzola-ticino1.zh-tw.html"]]},
+
+ {n:"14",date:"7/18 (六)",b:"trn",base:"返程 ✈",title:"Malpensa → 伊斯坦堡 → 台北",
+  chain:[{t:"p",v:"MXP 06:50"},{t:"fly",v:"TK1878"},{t:"p",v:"IST"},{t:"fly",v:"TK124"},{t:"p",v:"TPE 08:05⁺¹"}],
+  plan:["06:50｜米蘭 Malpensa MXP 起飛（TK1878），經伊斯坦堡 IST 轉機。",
+        "次日（7/19）08:05｜抵桃園 TPE，全程 19h15m，經濟艙 (W)。"],
+  tips:"清晨班機，前一晚住 Malpensa 旁的 Ca' del Borgo 最穩。",
+  links:[]},
+];
+
+const baseName={dob:"Dobbiaco",svc:"San Vito",sal:"Rifugio Salei",ort:"Ortisei",trn:"移動"};
+
+function chainHTML(ch){
+  return ch.map((seg,i)=>{
+    let inner;
+    if(seg.t==="p") inner=`<span class="node">${seg.v}</span>`;
+    else{
+      const cls = seg.t==="bus"?"bus":seg.t==="cab"?"cab":seg.t==="fly"?"fly":"trl";
+      inner=`<span class="seg ${cls}">${seg.v}</span>`;
+    }
+    const arr = i>0 && ch[i-1].t==="p" && seg.t==="p" ? `<span class="arr">→</span>` : "";
+    return arr+inner;
+  }).join("");
+}
+
+const root=document.getElementById("days");
+root.innerHTML = D.map(d=>{
+  const plan = d.plan.map(p=>{
+    const m = p.match(/^([^｜]+)｜(.*)$/);
+    return m ? `<li><span class="t">${m[1]}</span>${m[2]}</li>` : `<li>${p}</li>`;
+  }).join("");
+  const links = (d.links&&d.links.length)
+    ? `<div class="links">${d.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join("")}</div>`:"";
+  const eat = d.eat?`<span class="meta-chip"><span class="lab">吃吃</span>${d.eat}</span>`:"";
+  const tips = d.tips?`<span class="meta-chip"><span class="lab">Tip</span>${d.tips}</span>`:"";
+  const alt = d.alt?`<span class="meta-chip"><span class="lab">備案</span>${d.alt}</span>`:"";
+  const row = (eat||tips||alt)?`<div class="row">${eat}${tips}${alt}</div>`:"";
+  const warn = d.warn?`<div class="warn"><span class="ic">⚠️</span><span>${d.warn}</span></div>`:"";
+  return `
+  <div class="day reveal" data-b="${d.b}">
+    <div class="card">
+      <div class="top">
+        <div class="dlabel">
+          <span class="dnum">${d.n}</span>
+          <span class="ddate">${d.date}</span>
+        </div>
+        <span class="base ${d.b}">${d.base}</span>
+      </div>
+      <div class="title">${d.title}</div>
+      <div class="chain">${chainHTML(d.chain)}</div>
+      <ul class="plan">${plan}</ul>
+      ${row}${warn}${links}
+    </div>
+  </div>`;
+}).join("");
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
