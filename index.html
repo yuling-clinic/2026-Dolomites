@@ -222,11 +222,11 @@
       <li><span class="ic">🎫</span><div><b>Guest Pass（民宿提供，免費）＝ 公車／火車</b><br>
         <span class="note">涵蓋 südtirolmobil 公車與區域火車，拿了就好。但不含纜車、不含 442／444，且只在南提洛（Dobbiaco、Ortisei）有效；Cortina／San Vito 屬 Veneto 的 Dolomiti Bus 區，要另外付。</span></div></li>
       <li><span class="ic">🚠</span><div><b>Gardena Card（你會買）＝ Val Gardena 纜車</b><br>
-        <span class="note">涵蓋 Day 9 Seceda（#2／#3／#14）、Day 10 上 Alpe di Siusi 的主纜車、Day 11 Ciampinoi 等。連續日票，約 €124（3 日）／€160（6 日），對你 7/13–7/15 那段剛好。</span></div></li>
+        <span class="note">涵蓋 Day 9 Seceda（#4／#5／#7）、Day 10 上 Alpe di Siusi 的主纜車（#1）、Day 11 Sassolungo 山腳一串（#8–11）等。連續日票，約 €124（3 日）／€160（6 日），對你 7/13–7/15 那段剛好。</span></div></li>
       <li><span class="ic">🎟️</span><div><b>單程票 ＝ Val Gardena 以外的纜車</b><br>
         <span class="note">Day 5 五塔吊椅（Cinque Torri）、Day 6 Faloria、Day 7 Salei 都不在 Val Gardena，Gardena Card 不含 → 現場買單程票。</span></div></li>
       <li><span class="ic">⏱️</span><div><b>Seceda 時段預約（Day 9，必做）</b><br>
-        <span class="note">2026 起 Seceda 上山改分時段。持 Gardena Card 已含車資、但仍要先到 seceda.it 用卡號選一個時段（不另收費，只是搶位）。</span></div></li>
+        <span class="note">2026 起 Seceda 上山改分時段。持 Gardena Card 已含車資、但仍要到 seceda.it 用卡號前 9 碼選時段，且【只能在搭乘日前 3 天內】預約——到當地換好實體卡就趕快訂。</span></div></li>
     </ul>
     <div class="links">
       <a href="https://www.suedtirolmobil.info/en/#/">Südtirolmobil 交通查詢</a>
@@ -348,45 +348,55 @@ const D = [
   tips:"山屋預訂確認在 Gmail。Salei 吊椅在 Passo Sella 的 Val di Fassa 側 → Gardena Card 不含，現場買單程票。",
   links:[]},
 
- {n:"08",date:"7/12 (日)",b:"ort",base:"進駐 → Ortisei",title:"下山進西區基地",
-  chain:[{t:"p",v:"Salei"},{t:"cab",v:"🚠"},{t:"p",v:"Passo Sella"},{t:"bus",v:"350"},{t:"p",v:"Ortisei"}],
-  plan:["下山後搭 350 公車進入 Ortisei，入住公寓（Sule Hof）。",
-        "Val Gardena 區靠公車＋纜車即可暢行，這幾天以 Ortisei 為核心放射出遊。"],
+ {n:"08",date:"7/12 (日)",b:"ort",base:"進駐 → Ortisei",title:"下山進駐 ＋ 下午上休斯高原",
+  chain:[{t:"p",v:"Salei"},{t:"cab",v:"🚠"},{t:"p",v:"Passo Sella"},{t:"bus",v:"350"},{t:"p",v:"Ortisei"},{t:"cab",v:"#1 Alpe di Siusi"},{t:"p",v:"Alpe di Siusi"}],
+  plan:["上午｜Salei 吊椅（或步道）下 Passo Sella，搭 350 進 Ortisei，入住公寓（Sule Hof）、放行李。",
+        "下午｜鎮上直接搭 #1 Alpe di Siusi 箱型纜車上台地——歐洲最大高山草原、背景 Sassolungo，下午順光正好。平坦步道走向 Malga Sanon 拍照點，草原放牧牛鈴叮噹。",
+        "傍晚｜下山回 Ortisei，木雕小鎮慢活、Gelateria 冰淇淋。"],
+  warn:"這樣把休斯高原塞進移動日下午，就能空出一整天（Day 10）給富內斯山谷。前提是上午順利抵達 Ortisei；Alpe di Siusi 纜車夏季約開到 18:00，時間夠。",
+  tips:"#1 Ortisei–Alpe di Siusi 與 #2 Sole 都含 Gardena Card。",
   links:[["移動通行證 LTS Pass","https://apps.lts.it/pass-by/?token=C%2ful5FFGEJDULGliHfF7m5mcGwVQ3s22XZ2vHqjLAHHIJpHCtGecskxDGURORWyrXQAl1tphKK8yN%2bG3RXw5DNbOm8GzbCblCPaI2qbPOTw4HJ%2fGt%2bxTS2VoZb778RyKq%2bcK8091XK5ogUgh0YzkAg%3d%3d"],["Ortisei 訂房（muse.holiday）","https://www.muse.holiday/en/dolomites/weboffer/?key=942ef7f3-9fb4-4757-a01f-aac281998bab#booking"],["西區攻略 tings.tw","https://tings.tw/dolomiti-2/"]]},
 
  {n:"09",date:"7/13 (一)",b:"ort",base:"Ortisei",title:"Seceda 刀背山（西區核心）",
-  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#2 Furnes"},{t:"cab",v:"#3 Seceda"},{t:"p",v:"Seceda 2500m"},{t:"trl",v:"6→1"},{t:"cab",v:"#14 Col Raiser"},{t:"p",v:"Ortisei"}],
-  plan:["上山（兩段）｜① Ortisei–Furnes 纜車 #2（吊廂）→ 轉 ② Furnes–Seceda 纜車 #3（更陡的大纜車），約 15 分直上 2,500 m 刀背稜線。",
-        "出站即明信片上的刀背絕壁。沿山脊 6→1 號步道緩降，沿途散落古老木造牧場山屋（Malga）。",
-        "中午蔬食｜Rifugio Odle 或 Malga Pieralongia，高山野菇波倫塔＋手工接骨木花氣泡飲（Hugo），躺草皮看雙子石塔（兔耳岩）。",
-        "下山｜走到 Col Raiser 纜車 #14（吊廂）下到 Santa Cristina，轉接駁回 Ortisei；若走 Fermeda 那側則接吊椅 #4。"],
-  warn:"Seceda 上山 #2／#3（含 Fermeda #4）是「不適用 SuperSummer，但有含在 Gardena Card」內。2026 起一律分時段：持 Gardena Card 仍要先到 seceda.it 用卡號選時段（不另收費）。建議訂早場（8:30 開門、8:15 前到最空），刀背稜線幾乎可包場。",
-  tips:"纜車編號（Val Gardena 官方）：上山 #2 Ortisei–Furnes、#3 Furnes–Seceda；下山 #14 Col Raiser；中途若用到 Fermeda 是吊椅 #4。皆含在 Gardena Card。",
+  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#4 Furnes"},{t:"cab",v:"#5 Seceda"},{t:"p",v:"Seceda 2500m"},{t:"trl",v:"稜線步道"},{t:"cab",v:"#6 Fermeda"},{t:"cab",v:"#7 Col Raiser"},{t:"p",v:"S. Cristina"}],
+  plan:["可把 Seceda 這區的 #4–#7 一次搭齊。",
+        "上山（兩段）｜#4 Ortisei–Furnes（吊廂）→ 轉 #5 Furnes–Seceda（更陡的大纜車），約 15 分直上 2,500 m 刀背稜線。",
+        "出站即明信片上的刀背絕壁。沿稜線步道緩降經 Mastlè 一帶，散落古老木造牧場山屋（Malga）；中午蔬食在 Rifugio Odle 或 Malga Pieralongia（高山野菇波倫塔＋接骨木花氣泡飲 Hugo），躺草皮看雙子石塔（兔耳岩）。",
+        "下山｜接 #6 Fermeda 吊椅 → #7 Col Raiser 纜車下到 Santa Cristina，轉 350／352 回 Ortisei。"],
+  warn:"Seceda（#4／#5，含 Fermeda #6）不適用 SuperSummer，但有含在 Gardena Card。2026 起一律分時段，而且【只能在搭乘日前 3 天內】線上預約：到 seceda.it 輸入 Gardena Card 卡號前 9 碼、選日期時段（不另收費）。建議訂早場，刀背稜線幾乎可包場。",
+  tips:"流程：線上買 Gardena Card → 抵達後到纜車站換實體卡 → 再上網預約 Seceda 時段。編號：#4 Ortisei–Furnes、#5 Furnes–Seceda、#6 Fermeda、#7 Col Raiser，皆含 Gardena Card。",
   links:[["Seceda 時段預約","https://www.seceda.it/en/summer"],
          ["Seceda 攻略 massi.tw","https://massi.tw/dolomiti-seceda/"]]},
 
- {n:"10",date:"7/14 (二)",b:"ort",base:"Ortisei",title:"Alpe di Siusi 大草原 ＋ Ortisei 慢活（合併日）",
-  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#11 🚠"},{t:"p",v:"Alpe di Siusi"},{t:"trl",v:"WALK"},{t:"p",v:"Malga Sanon"},{t:"cab",v:"🚠"},{t:"p",v:"Ortisei 鎮上"}],
-  plan:["上午錯峰｜Ortisei 搭 Alpe di Siusi 箱型纜車（#11）上台地，眼前是延伸到天邊的無垠草原、背景 Sassolungo 金字塔巨石。全程無障礙平坦步道走向黃金拍照點 Malga Sanon，草原放牧牛鈴叮噹，中午找視野最好的木屋餐廳（松露燉飯＋在地水果派）。",
-        "下午｜回 Ortisei 木雕小鎮慢活：石磚步行街選植物系手工皂／保養品、Gelateria 義式冰淇淋、噴泉旁看山城黃昏；或回 Sule Hof 公寓自煮。"],
-  warn:"Val di Funes 不要排在同一天：它在另一條山谷，無自駕來回約 4 小時車程（經 Chiusa／Bressanone 轉車），和 Alpe di Siusi 方向相反。想要 Odle 巨壁的風景，最聰明是把它『走』進 Day 9 Seceda——搭 Resciesa 上高原走 35 號 Adolf Munkel 步道下 Santa Maddalena；只想要洋蔥頭教堂招牌照才需另給半天搭公車。",
-  tips:"上 Alpe di Siusi 的主纜車 #11 含 Gardena Card；台地小吊椅（#12 Sole 等）不含，但通常用不到。",
+ {n:"10",date:"7/14 (二)",b:"ort",base:"Ortisei",title:"富內斯山谷 Val di Funes（洋蔥頭教堂）",
+  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"351"},{t:"p",v:"Chiusa/Bressanone"},{t:"bus",v:"330"},{t:"p",v:"Val di Funes"},{t:"bus",v:"330→351"},{t:"p",v:"Ortisei"}],
+  plan:["交通｜這天專程跑一趟：Ortisei 搭 351 下到 Chiusa／Bressanone，轉 330 進 Val di Funes，單程約 1 小時 55 分、轉一次車，一早出發。",
+        "Santa Maddalena｜山丘上的聖瑪達肋納教堂，走 Panorama 觀景步道從對面山坡俯拍「教堂＋Odle 巨壁」的經典構圖。",
+        "San Giovanni in Ranui｜谷底草地上的洋蔥頭小教堂（招牌明信片照），付費進柵欄區拍照。",
+        "想健行｜可從 Zanser Alm／Ranui 走一段 35 號 Adolf Munkel 步道，走在 Odle 巨壁正下方，風景一流。",
+        "午餐｜San Pietro／Santa Maddalena 村裡用餐，下午搭 330 → 351 回 Ortisei（約 2 小時）。"],
+  warn:"這是西區四天裡唯一的長程通勤日（來回約 4 小時）：一早出發、務必抓好回程末班。無自駕就這條 351→330 最順，確切班次用 Südtirolmobil 查當天。",
+  tips:"把休斯高原挪到 7/12 下午，才空出這一整天給富內斯。這天沒有 Val Gardena 纜車，用不到 Gardena Card。",
   links:[]},
 
- {n:"11",date:"7/15 (三)",b:"ort",base:"Ortisei",title:"Resciesa 高原 ＋ 纜車巡遊（#8–15 待定）",
-  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#8 Resciesa 🚠"},{t:"p",v:"Rasciesa 高原 2100m"}],
-  plan:["暫定｜從 Ortisei 搭 Resciesa 纜車 #8（新纜車）上 Rasciesa 高原（2,100 m）——緩坡草原、人少、正對 Odle／Seceda，最適合悠閒慢走、野餐。",
-        "想多搭纜車｜可再串其他 #8–15 的纜車，看當天體力與興趣安排（見下方對照）。"],
-  warn:"你說的「8–15 號」對照官方夏季纜車圖：#8 Resciesa、#9 Furnes–Seceda、#10 Fermeda、#11 Alpe di Siusi、#12 Sole、#13 Gran Paradiso–石頭城、#14 Piz Setëur、#15 Forcella Sassolungo。這些分散在好幾個區、一天搭不完，且 #9/#10 已在 Day 9、#13/#14 在 Day 12 → 告訴我 Day 11 你最想搭哪幾條，我再把這天定下來。",
+ {n:"11",date:"7/15 (三)",b:"ort",base:"Ortisei",title:"纜車巡遊 #8–15 · 山腳＋Passo Gardena",
+  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350"},{t:"p",v:"S. Cristina"},{t:"cab",v:"#8→#9"},{t:"trl",v:"WALK"},{t:"cab",v:"#10→#11"},{t:"p",v:"Selva"},{t:"cab",v:"#13→#14"},{t:"p",v:"Passo Gardena"}],
+  plan:["纜車搭好搭滿的一天，#8–15 分兩段，量大、看體力取捨。",
+        "上午（Ciampinoi 串）｜S. Cristina 搭 #8 Monte Pana（紅蘑菇雕塑）→ #9 Mont Sëura（朝 Sassolungo）→ 平路 15 分（牛群多）→ #10 Tramans → 小上坡 → #11 Ciampinoi 下山回 Selva。#12 Piza Pransëies 可從 Ciampinoi 單線來回加搭。",
+        "下午（Passo Gardena 串）｜Selva 這側上 #13 Dantercëpies → #14 Cir 到 Passo Gardena，看 Cir／Sella 山群與雄偉隘口；#15 Costabella（Selva La Bula，單程）也在這一帶，可走下坡步道接回 #13。",
+        "回程｜Passo Gardena 搭 473，或 Ciampinoi／Selva 搭 350／352 回 Ortisei。"],
+  warn:"#8–15 共 8 條、橫跨 S. Cristina→Selva→Passo Gardena，全搭完是很滿的一天。建議上午先把 #8–11（最精華、幾乎散步）走好，下午 #13–15 再看時間體力決定。全部含 Gardena Card。",
+  tips:"提醒：Day 11（#8–15）和 Day 12（石頭城 #16–18）都繞著 Sassolungo，是同一座山的不同角度——喜歡就很過癮。已對照你提供的纜車圖。",
   links:[]},
 
- {n:"12",date:"7/16 (四)",b:"ort",base:"Ortisei",title:"Sassolungo 巨石群「石頭城」",
-  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350"},{t:"p",v:"Plan de Gralba"},{t:"cab",v:"#14 Piz Setëur"},{t:"cab",v:"#13 Gran Paradiso"},{t:"p",v:"石頭城"},{t:"trl",v:"526"},{t:"p",v:"Rif. Comici"}],
+ {n:"12",date:"7/16 (四)",b:"ort",base:"Ortisei",title:"Sassolungo 石頭城 · 纜車 #16–18",
+  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350"},{t:"p",v:"Plan de Gralba"},{t:"cab",v:"#16 Piz Setëur"},{t:"cab",v:"#17 Gran Paradiso"},{t:"trl",v:"526"},{t:"cab",v:"#18 棺材吊廂"},{t:"p",v:"Passo Sella"}],
   plan:["交通｜350／352 公車到 Plan de Gralba。",
-        "上山｜Piz Setëur 纜車 #14 ＋ Gran Paradiso 吊椅 #13，接 526 號步道穿越科幻感十足的「石頭城」（Città dei Sassi），身邊全是幾層樓高的巨石。",
-        "中午｜抵 Rifugio Comici（科米奇山屋），全區最時尚、有精緻蔬食，藍白露台正對絕壁用餐。",
-        "想加碼｜走到 Passo Sella 搭 Forcella Sassolungo #15『棺材』吊廂，深入 Sassolungo 山心（Toni Demetz 山屋）。"],
-  tips:"#13／#14（含 #15）皆含在 Gardena Card。",
+        "#16 Piz Setëur 纜車 → #17 Gran Paradiso 吊椅：出站接 526 號步道穿越科幻感十足的『石頭城』（Città dei Sassi），身邊全是幾層樓高的巨石。中午在 Rifugio Comici（時尚山屋、精緻蔬食、藍白露台正對絕壁）。",
+        "#18 Forcella del Sassolungo｜從 #17 走到 Passo Sella，搭『棺材』吊廂深入 Sassolungo 山心（Toni Demetz 山屋，一車 1–2 人、很刺激）。",
+        "回程｜Passo Sella 對面公車站搭 471 回 Selva／Ortisei。"],
+  warn:"末班 471 從 Passo Sella 回 Selva／Ortisei 約 18:00（每 30 分一班），別錯過。",
+  tips:"#16／#17／#18 皆含在 Gardena Card。想更深入可走 Sassolungo 環線，但那要預留一整天。",
   links:[]},
 
  {n:"13",date:"7/17 (五)",b:"trn",base:"米蘭近郊",title:"離山拉車：前往 Malpensa（近機場）",
