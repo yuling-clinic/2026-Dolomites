@@ -155,6 +155,8 @@
     transition:border-color .15s,transform .15s;}
   .links a:hover{border-color:var(--glow);transform:translateY(-1px);}
   .links a::after{content:"↗";font-family:var(--mono);font-size:11px;color:var(--slate);}
+  .links a.maplink{background:#EEF4F1;border-color:#C7DBD2;}
+  .links a.maplink:hover{border-color:#5E9E86;}
 
   /* ---------- CHECK / FOOTER ---------- */
   .check{background:#20292A;color:#E7E6E0;border-radius:16px;
@@ -178,6 +180,20 @@
     .dnum{font-size:30px;}
     .meta{gap:10px 18px;}
   }
+  .sum{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:24px 22px;margin:34px 0;}
+  .sum > h2{font-family:var(--display);font-size:24px;font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px;}
+  .sum > h2 .tick{font-family:var(--mono);font-size:12px;color:var(--glow);border:1px solid var(--glow);border-radius:6px;padding:2px 7px;letter-spacing:.1em;}
+  .sum h3{font-family:var(--display);font-size:16px;font-weight:600;margin:20px 0 4px;display:flex;align-items:center;gap:8px;}
+  .sum h3:first-of-type{margin-top:0;}
+  .sum .st{font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:3px 8px;border-radius:20px;text-transform:uppercase;font-weight:700;}
+  .st.done{background:#E3EAE5;color:#2F4A3C;}
+  .st.todo{background:var(--glow-soft);color:#9A4A30;}
+  .st.day{background:#DCE3EA;color:#3C5366;}
+  .sum ul{list-style:none;margin:0;padding:0;}
+  .sum li{padding:9px 0;border-top:1px solid var(--line);font-size:13.5px;line-height:1.55;}
+  .sum li:first-child{border-top:none;}
+  .sum li b{font-weight:600;}
+  .sum li .mono{font-family:var(--mono);font-size:11.5px;color:var(--slate);}
 </style>
 </head>
 <body>
@@ -185,7 +201,7 @@
 
   <header class="hero reveal">
     <div class="glowbar"></div>
-    <p class="eyebrow">無自駕 · 公車＋纜車 · 蔬食</p>
+    <p class="eyebrow">無自駕 · 公車＋纜車</p>
     <h1><span class="yr">2026</span> Dolomites</h1>
     <p class="cn">義大利多洛米蒂山脈健行</p>
     <p class="sub">2026 / 07 / 04 — 07 / 18</p>
@@ -202,7 +218,6 @@
       <div class="m"><span class="k">天數</span><span class="v">15 天</span></div>
       <div class="m"><span class="k">基地</span><span class="v">4 處</span></div>
       <div class="m"><span class="k">移動方式</span><span class="v">公車 · 纜車</span></div>
-      <div class="m"><span class="k">飲食</span><span class="v">蔬食</span></div>
     </div>
 
     <div class="legend">
@@ -214,6 +229,38 @@
     </div>
   </header>
 
+  <!-- MASTER SUMMARY -->
+  <section class="sum reveal">
+    <h2><span class="tick">總表</span>行前預約 &amp; 確認</h2>
+
+    <h3><span class="st done">已完成</span>訂好的票券／住宿</h3>
+    <ul>
+      <li><b>去程機票</b> TK25／TK1867 · <span class="mono">7/4 21:45 TPE → 7/5 08:20 VCE</span></li>
+      <li><b>回程機票</b> TK1878／TK124 · <span class="mono">7/18 06:50 MXP → 7/19 08:05 TPE</span></li>
+      <li><b>Fly Bus</b> 威尼斯機場 → Dobbiaco · <span class="mono">#UVH383661 · 7/5 14:20→17:45</span></li>
+      <li><b>442 Lago di Braies</b> · <span class="mono">7/7 07:02（St.-Johannes 街）→ 13:31</span> · 已預約</li>
+      <li><b>FlixBus</b> Bolzano → Malpensa T1 · <span class="mono">#3366672372 · 7/17 09:15→13:40</span> · 已付</li>
+      <li><b>住宿</b> Dobbiaco · San Vito · Rifugio Salei（Gmail）· Ortisei · Ca' del Borgo（米蘭）</li>
+    </ul>
+
+    <h3><span class="st todo">出發前辦</span>要先處理</h3>
+    <ul>
+      <li><b>Gardena Card</b>：線上買 → 抵達後到纜車站<b>換實體卡</b>（涵蓋 Day 9–12 的 Val Gardena 纜車）。</li>
+      <li><b>Seceda 時段（Day 9 / 7/13）</b>：換卡後，<b>搭乘日前 3 天內</b>（最早 7/10）上 seceda.it，輸卡號前 9 碼選時段。你 7/10–12 在移動，換卡後立刻搶。</li>
+      <li><b>單程纜車票（現場買）</b>：Day 5 五塔吊椅、Day 6 Faloria、Day 7 Salei 吊椅（都非 Val Gardena、Gardena Card 不含）。</li>
+      <li><b>SuperSummer 點數卡</b>：非必買，上面單程票即可。</li>
+    </ul>
+
+    <h3><span class="st day">當天注意</span>現場提醒</h3>
+    <ul>
+      <li><b>7/11 跨山（最需留意）</b>：<span class="mono">30→52→465→472，07:41→11:22</span>，免預訂、<b>帶現金</b>、當天用 Google Maps 複查，盯緊 Passo Falzarego、Corvara 兩個接點。</li>
+      <li><b>末班車</b>：Salei 吊椅約 16:30–17:00（問山屋）；Day 12 Passo Sella 的 471 約 18:00。</li>
+      <li><b>Day 1 威尼斯</b>：行李寄機場 Trasbagagli，務必 13:30 前回機場趕 14:20 Fly Bus。</li>
+      <li><b>Day 3 Braies</b>：一到先排船（08:00 開、不能預約、中午易排長隊），再環湖。</li>
+      <li><b>Day 13</b>：約 07:30 的 350 出發，接 09:15 FlixBus（Autostazione 與火車站步行約 5 分）。</li>
+    </ul>
+  </section>
+
   <!-- BEFORE YOU GO -->
   <section class="panel reveal">
     <h2><span class="tick">行前</span>出發前必辦</h2>
@@ -224,7 +271,7 @@
       <li><span class="ic">🚠</span><div><b>Gardena Card（你會買）＝ Val Gardena 纜車</b><br>
         <span class="note">涵蓋 Day 9 Seceda（#4／#5／#7）、Day 10 上 Alpe di Siusi 的主纜車（#1）、Day 11 Sassolungo 山腳一串（#8–11）等。連續日票，約 €124（3 日）／€160（6 日），對你 7/13–7/15 那段剛好。</span></div></li>
       <li><span class="ic">🎟️</span><div><b>單程票 ＝ Val Gardena 以外的纜車</b><br>
-        <span class="note">Day 5 五塔吊椅（Cinque Torri）、Day 6 Faloria、Day 7 Salei 都不在 Val Gardena，Gardena Card 不含 → 現場買單程票。</span></div></li>
+        <span class="note">Day 5 五塔吊椅（Cinque Torri）、Day 6 Faloria 不在 Val Gardena，Gardena Card 不含 → 現場買單程票。（Day 7 Salei 改由山屋接駁，不用搭吊椅。）</span></div></li>
       <li><span class="ic">⏱️</span><div><b>Seceda 時段預約（Day 9，必做）</b><br>
         <span class="note">2026 起 Seceda 上山改分時段。持 Gardena Card 已含車資、但仍要到 seceda.it 用卡號前 9 碼選時段，且【只能在搭乘日前 3 天內】預約——到當地換好實體卡就趕快訂。</span></div></li>
     </ul>
@@ -337,20 +384,20 @@ const D = [
   links:[]},
 
  {n:"07",date:"7/11 (六)",b:"sal",base:"Rifugio Salei 山屋",title:"跨山大移動 ＋ 上山住山屋",
-  chain:[{t:"p",v:"San Vito"},{t:"bus",v:"001"},{t:"p",v:"Cortina"},{t:"bus",v:"Cortina Exp."},{t:"p",v:"Corvara"},{t:"bus",v:"473"},{t:"p",v:"Plan de Gralba"},{t:"bus",v:"471"},{t:"p",v:"Passo Sella"},{t:"cab",v:"Salei 🚠"},{t:"p",v:"Salei"}],
-  plan:["重點｜只搭 471 到不了——471 只在 Plan de Gralba／Canazei 那一側跑，要分段轉乘。",
-        "① ~08:00｜San Vito 搭 001 到 Cortina（約 15 分）。",
-        "② Cortina → Corvara｜搭 Cortina Express（Cortina Piazza Roma–Passo Falzarego–Corvara，約 1 小時，建議先訂位；7/11 是週六有跑）。",
-        "③ Corvara → Plan de Gralba｜搭 473（Corvara–Passo Gardena–Val Gardena，每小時一班）。",
-        "④ Plan de Gralba → Passo Sella｜轉 471（旺季每 15 分一班；客滿可改搭 Plan de Gralba 纜車上去）。",
-        "⑤ Passo Sella → Rifugio Salei｜搭 Salei 吊椅纜車（或走 657 號步道 25–40 分）。入住享頂級 SPA／桑拿。"],
-  warn:"最關鍵的『時限』是 Salei 吊椅末班（夏季多半約 16:30–17:00）——因為你住山屋，請直接向 Rifugio Salei 確認當天末班與接駁。想中午前到：San Vito 約 08:00–08:30 出發、Cortina 的 Cortina Express 不晚於 ~10:00。各段確切分鐘出發前用 Südtirolmobil 查 7/11 當天。",
-  tips:"山屋預訂確認在 Gmail。Salei 吊椅在 Passo Sella 的 Val di Fassa 側 → Gardena Card 不含，現場買單程票。",
-  links:[]},
+  chain:[{t:"p",v:"San Vito 07:41"},{t:"bus",v:"30"},{t:"p",v:"Cortina"},{t:"bus",v:"52"},{t:"p",v:"Passo Falzarego"},{t:"bus",v:"465"},{t:"p",v:"Corvara"},{t:"bus",v:"472"},{t:"p",v:"Passo Sella 11:22"},{t:"cab",v:"🚐 山屋接駁"},{t:"p",v:"Salei"}],
+  plan:["實測：全程地方公車約 3 小時 40 分、不用任何預訂，最推薦 07:41 → 11:22 這班。",
+        "07:41｜30 號 San Vito → Cortina。",
+        "轉 52 號 Cortina → Passo Falzarego。",
+        "轉 465 號 Passo Falzarego → Corvara（Alta Badia）。",
+        "轉 472 號 Corvara → Passo Sella，11:22 抵達。",
+        "到 Passo Sella｜直接打電話給 Rifugio Salei，他們會來公車站接你上山屋（已 email 確認 OK，不用搭吊椅了）。入住享 SPA／桑拿。"],
+  warn:"不是 Cortina Express（在那邊查 Cortina→Corvara 也查無班次是正常的）。30／52 是 Dolomitibus、465／472 是 SAD／Südtirolmobil，全都不用預訂：各自 app 買或上車付現（帶足現金）。要換 4 次車，最需盯 Passo Falzarego（52→465）與 Corvara（465→472）兩個接點；行李多，抓 07:41 早班最保險，漏一班約一小時後有下一班。",
+  tips:"認 472 是進 Passo Sella 的關鍵班次（有些班多繞 473，時間差不多）。出發前一晚用 Google Maps 複查 7/11、截圖各段站名時刻；南提洛側用 südtirolmobil 看即時。抵 Passo Sella 記得打給山屋接駁（電話在 Gmail 訂房信裡）。",
+  links:[["Südtirolmobil 查詢","https://www.suedtirolmobil.info/en/"]]},
 
  {n:"08",date:"7/12 (日)",b:"ort",base:"進駐 → Ortisei",title:"下山進駐 ＋ 下午上休斯高原",
-  chain:[{t:"p",v:"Salei"},{t:"cab",v:"🚠"},{t:"p",v:"Passo Sella"},{t:"bus",v:"350"},{t:"p",v:"Ortisei"},{t:"cab",v:"#1 Alpe di Siusi"},{t:"p",v:"Alpe di Siusi"}],
-  plan:["上午｜Salei 吊椅（或步道）下 Passo Sella，搭 350 進 Ortisei，入住公寓（Sule Hof）、放行李。",
+  chain:[{t:"p",v:"Salei"},{t:"cab",v:"🚐/🚠 下山"},{t:"p",v:"Passo Sella"},{t:"bus",v:"350"},{t:"p",v:"Ortisei"},{t:"cab",v:"#1 Alpe di Siusi"},{t:"p",v:"Alpe di Siusi"}],
+  plan:["上午｜Salei 吊椅（或請山屋協助）下 Passo Sella，搭 350 進 Ortisei，入住公寓、放行李。",
         "下午｜鎮上直接搭 #1 Alpe di Siusi 箱型纜車上台地——歐洲最大高山草原、背景 Sassolungo，下午順光正好。平坦步道走向 Malga Sanon 拍照點，草原放牧牛鈴叮噹。",
         "傍晚｜下山回 Ortisei，木雕小鎮慢活、Gelateria 冰淇淋。"],
   warn:"這樣把休斯高原塞進移動日下午，就能空出一整天（Day 10）給富內斯山谷。前提是上午順利抵達 Ortisei；Alpe di Siusi 纜車夏季約開到 18:00，時間夠。",
@@ -419,6 +466,24 @@ const D = [
 
 const baseName={dob:"Dobbiaco",svc:"San Vito",sal:"Rifugio Salei",ort:"Ortisei",trn:"移動"};
 
+const MAPS={
+ "00":[["Venice Marco Polo 機場","Venice Marco Polo Airport"]],
+ "01":[["Ponte di Rialto","Ponte di Rialto Venezia"],["Piazza San Marco","Piazza San Marco Venezia"],["🍝 We Love Italy 手工麵","We Love Italy Fresh Pasta Venice Rialto"],["住宿 Dobbiaco","https://maps.app.goo.gl/zm8uZQFG6RxfVovK8?g_st=ic"]],
+ "02":[["Rifugio Auronzo","Rifugio Auronzo Tre Cime"],["Lago di Misurina","Lago di Misurina"],["住宿 Dobbiaco","https://maps.app.goo.gl/zm8uZQFG6RxfVovK8?g_st=ic"]],
+ "03":[["Lago di Braies","Lago di Braies Pragser Wildsee"],["🍽️ Winkelkeller 晚餐","Restaurant Winkelkeller Dobbiaco"],["住宿 Dobbiaco","https://maps.app.goo.gl/zm8uZQFG6RxfVovK8?g_st=ic"]],
+ "04":[["Lago di Sorapis","Lago di Sorapis Rifugio Vandelli"],["Passo Tre Croci","Passo Tre Croci Cortina"],["住宿 San Vito","https://maps.app.goo.gl/utAkPzKHf4qYcUJp6?g_st=ic"]],
+ "05":[["Passo Giau","Passo Giau"],["Rifugio Scoiattoli","Rifugio Scoiattoli Cinque Torri"],["住宿 San Vito","https://maps.app.goo.gl/utAkPzKHf4qYcUJp6?g_st=ic"]],
+ "06":[["Faloria 纜車","Faloria funivia Cortina"],["🌱 Fvsion 純素日式","Fvsion Cortina Restaurant"],["住宿 San Vito","https://maps.app.goo.gl/utAkPzKHf4qYcUJp6?g_st=ic"]],
+ "07":[["Passo Sella","Passo Sella"],["住宿 Rifugio Salei","Rifugio Salei Passo Sella"]],
+ "08":[["Alpe di Siusi 纜車","Ortisei Alpe di Siusi cabinovia"],["Malga Sanon","Malga Sanon Alpe di Siusi"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "09":[["Seceda","Seceda Ortisei"],["🌱 Sanybon 蔬食早午餐","Sanybon Ortisei"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "10":[["San Giovanni in Ranui","San Giovanni in Ranui Villnoss"],["Santa Maddalena","Santa Maddalena Funes"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "11":[["Monte Pana","Monte Pana Santa Cristina"],["Passo Gardena","Passo Gardena Grodner Joch"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "12":[["Rifugio Comici","Rifugio Comici Sassolungo"],["🍕 Mauriz Keller 披薩/菇菇麵","Mauriz Keller Ortisei"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "13":[["Milano Malpensa T1","Milano Malpensa Terminal 1"],["住宿 Ca' del Borgo","https://maps.app.goo.gl/nGn7n3wdTADXbYXAA?g_st=ic"]],
+ "14":[["Milano Malpensa","Milano Malpensa Airport"]],
+};
+
 function chainHTML(ch){
   return ch.map((seg,i)=>{
     let inner;
@@ -438,8 +503,13 @@ root.innerHTML = D.map(d=>{
     const m = p.match(/^([^｜]+)｜(.*)$/);
     return m ? `<li><span class="t">${m[1]}</span>${m[2]}</li>` : `<li>${p}</li>`;
   }).join("");
-  const links = (d.links&&d.links.length)
-    ? `<div class="links">${d.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join("")}</div>`:"";
+  const mapItems = (MAPS[d.n]||[]);
+  const mapHTML = mapItems.map(m=>{
+    const href = /^https?:/.test(m[1]) ? m[1] : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m[1])}`;
+    return `<a class="maplink" href="${href}" target="_blank" rel="noopener">📍 ${m[0]}</a>`;
+  }).join("");
+  const infoHTML = (d.links||[]).map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join("");
+  const links = (mapHTML||infoHTML) ? `<div class="links">${mapHTML}${infoHTML}</div>` : "";
   const eat = d.eat?`<span class="meta-chip"><span class="lab">吃吃</span>${d.eat}</span>`:"";
   const tips = d.tips?`<span class="meta-chip"><span class="lab">Tip</span>${d.tips}</span>`:"";
   const alt = d.alt?`<span class="meta-chip"><span class="lab">備案</span>${d.alt}</span>`:"";
