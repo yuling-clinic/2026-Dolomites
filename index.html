@@ -172,6 +172,16 @@
   ul.plan li .t{font-family:var(--mono);font-size:11.5px;font-weight:700;
     color:var(--pine);margin-right:6px;}
 
+  ul.sched{margin:14px 0 0;padding:0;list-style:none;}
+  ul.sched li{display:flex;gap:9px;padding:8px 0;align-items:baseline;
+    border-top:1px solid var(--line);font-size:14.5px;line-height:1.45;}
+  ul.sched li:first-child{border-top:none;}
+  ul.sched .si{flex:none;width:20px;text-align:center;font-size:15px;
+    align-self:flex-start;position:relative;top:1px;}
+  ul.sched .st{flex:none;min-width:46px;font-family:var(--mono);font-size:12px;
+    font-weight:700;color:var(--pine);}
+  ul.sched .sx{flex:1;min-width:0;}
+
   .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
   .meta-chip{font-size:13px;display:inline-flex;gap:7px;align-items:center;
     background:#F1EFE8;border:1px solid var(--line);border-radius:9px;padding:7px 11px;}
@@ -291,6 +301,10 @@ const D = [
   chain:[{t:"p",v:"TPE 21:45"},{t:"fly",v:"TK25"},{t:"p",v:"IST"},{t:"fly",v:"TK1867"},{t:"p",v:"VCE 08:20⁺¹"}],
   plan:["21:45｜台北 TPE 起飛（TK25），經伊斯坦堡 IST 轉機。",
         "次日 08:20｜抵威尼斯 VCE，全程 16h35m，經濟艙 (E)。"],
+  sched:[
+    ["✈️","21:45","TK25 台北 TPE 起飛 → 伊斯坦堡 IST 轉機"],
+    ["✈️","08:20⁺¹","TK1867 抵威尼斯 VCE（全程 16h35m，經濟艙 E）"]
+  ],
   tips:"夜間紅眼，落地即 7/5 早上。",
   links:[]},
 
@@ -304,6 +318,17 @@ const D = [
         "回程｜ATVO 返機場，13:30 前取回行李。",
         "14:20｜Fly Bus 發車 → 16:30 Cortina（Piazza Roma）→ 17:45 抵 Dobbiaco（座位 49／100 號車）。",
         "晚餐｜Hans 窯烤披薩（推薦）＋ 義大利菠菜餃 Schlutzkrapfen。"],
+  sched:[
+    ["✈️","08:20","抵威尼斯 VCE，入境、提領行李"],
+    ["🧳","","行李寄機場 Trasbagagli（€9／件；Piazzale Roma 巴士站旁雜貨店只要 €5）"],
+    ["🚌","~09:00","ATVO 快線 → Piazzale Roma（約 20–25 分）"],
+    ["🚶","","步行到 Rialto 橋，穿小運河、小橋、安靜巷弄"],
+    ["🚤","","搭 Gondola（30 分鐘、€90／整艘船，上船前先確認價格）"],
+    ["📸","","聖馬可廣場晃晃拍照"],
+    ["🚌","~13:00","ATVO 返機場，13:30 前取回行李"],
+    ["🚌","14:20","Fly Bus 機場 → 16:30 Cortina → 17:45 抵 Dobbiaco（座位 49／100 號車）"],
+    ["🍽️","晚餐","Hans 窯烤披薩（推薦）＋ 義大利菠菜餃 Schlutzkrapfen"]
+  ],
   warn:"半日遊偏緊湊：務必 13:30 前回到機場取行李、趕 14:20 Fly Bus。航班若延誤就直接在機場休息，別硬進城。",
   tips:"行李寄放：機場 €9／件、Piazzale Roma 雜貨店 €5／件（回程從機場發車的話寄機場最順）。Fly Bus 訂位 UVH383661 · €33.50。",
   links:[]},
@@ -315,6 +340,16 @@ const D = [
         "接著｜走經典 101→105 三峰大環線（3–4 小時），中午在 Rifugio Locatelli（Dreizinnenhütte）午餐——正對三峰北壁，波倫塔／湯／蘋果捲都有蔬食選擇。",
         "15:08｜搭【已預約】444 下山。注意：444 不停 Misurina（實測確認），改在 Lago di Dobbiaco 下車環湖散步，再搭 445 回鎮上。",
         "晚餐｜Hans（連兩晚都好吃）。"],
+  sched:[
+    ["🚌","07:20","444 號 Dobbiaco → Rifugio Auronzo（2,320 m），約 08:00 抵達【已預約】"],
+    ["🥾","","117 步道南行約 40 分到 Cadini di Misurina 尖塔群，晨光順光拍照後折返"],
+    ["🥾","","走 101→105 三峰大環線（3–4 小時）"],
+    ["🍽️","午餐","Rifugio Locatelli（Dreizinnenhütte）正對三峰北壁，波倫塔／湯／蘋果捲"],
+    ["🚌","15:08","444 號下山【已預約】（444 不停 Misurina）"],
+    ["📸","","Lago di Dobbiaco 下車環湖散步"],
+    ["🚌","","445 號回 Dobbiaco 鎮上"],
+    ["🍽️","晚餐","Hans"]
+  ],
   warn:"444 全程不停 Misurina、無法在湖畔上下車；想去 Misurina 湖要另外搭 445（見 Day 3 加碼方案）。Rifugio Auronzo 餐點評價普通，當咖啡／廁所站就好，正餐留給 Locatelli。",
   links:[["444 三峰接駁預約","https://www.drei-zinnen.bz/en/offer/detail/three-peaks-shuttle_40?date="]]},
 
@@ -326,6 +361,15 @@ const D = [
         "約 09:00｜走平坦環湖步道一圈（約 3.6 km、1–1.5 小時），沿途長椅多、邊走邊放空。",
         "午後｜湖畔咖啡／午餐，悠閒待著，13:31 搭【已預約】442 回 Dobbiaco。",
         "加碼（可選）｜Misurina 湖：約 14:00 回到總站後，搭約 15:20 的 445（往 Cortina 方向）約 30 分到 Misurina，環湖 1 小時再搭 445 回鎮上——補回 Day 2 沒去成的 Misurina。"],
+  sched:[
+    ["🚌","07:02","442 號（Toblach St.-Johannes 街）→ 07:29 抵 Lago di Braies【已預約】"],
+    ["📸","07:30","清晨湖畔無人，先拍照"],
+    ["🚤","08:00","租船一開就先去排（避開 9 點後長隊），划 45 分鐘"],
+    ["🥾","~09:00","環湖步道一圈（約 3.6 km、1–1.5 小時）"],
+    ["🍽️","","湖畔咖啡／午餐，悠閒待著"],
+    ["🚌","13:31","442 號回 Dobbiaco【已預約】"],
+    ["🚌","加碼","可搭 15:05 的 445 去 Misurina 環湖（去前先確認回程末班！）"]
+  ],
   warn:"木船不能預約、只能現場買，旺季中午前後可能排到 1–2 小時 → 所以「一到先租船、再環湖」。加碼 Misurina 前務必用 südtirolmobil app 確認『Misurina 回 Dobbiaco 的末班 445』（一天僅約 3 班），確定接得回來再出發。",
   tips:"已訂 442：去 07:02（St.-Johannes 街）、回 13:31。有線上預約，7 月旺季 9 點前進谷的限制對你不適用。",
   links:[["442 預約 prags.bz","https://www.prags.bz/en"],["442／接駁預約 drei-zinnen","https://www.drei-zinnen.bz/en/offer/detail/three-peaks-shuttle_40?date="]]},
@@ -335,6 +379,12 @@ const D = [
   plan:["早上｜Dobbiaco 退房，南下到 San Vito di Cadore 入住（如 Hotel Alemagna），行李安頓好。",
         "下午｜輕鬆搭 30 號（Dolomitibus，每約 30 分一班、約 22 分）到 Cortina，悠閒逛貴族小鎮：戶外用品步行街、咖啡、gelato、噴泉旁看山城。",
         "當作移動＋適應日，不趕、不扛行李——體力大的 Sorapis 留到後天（Day 6，已入住、輕裝走）。"],
+  sched:[
+    ["🧳","上午","Dobbiaco 退房，南下 San Vito di Cadore 入住、行李安頓"],
+    ["🚌","下午","30 號 San Vito → Cortina（Dolomitibus，每約 30 分一班、約 22 分）"],
+    ["📸","","Cortina 貴族小鎮慢逛：戶外用品步行街、咖啡、gelato、噴泉旁看山城"],
+    ["🍽️","晚餐","Fvsion（純素日式）"]
+  ],
   warn:"原本想搭的 Faloria 纜車夏季 7/11 才開，你在 Cortina 的三天（7/8–10）都還沒開 → 這趟搭不到 Faloria，已從行程移除。想要纜車視野，Day 5 五塔山的 Cinque Torri 開放式吊椅就很棒。",
   eat:"晚餐可回 Cortina 的 Fvsion（純素日式，很懂素食）。",
   links:[]},
@@ -347,8 +397,18 @@ const D = [
         "中午｜抵 Rifugio Scoiattoli（松鼠山屋），露台正對五塔絕壁，招牌松露菇菇手工麵；繞五塔一圈、逛一戰露天博物館。",
         "下山｜松鼠山屋旁搭 Cinque Torri 開放式吊椅（10 分）下到 Bai de Dones。",
         "回程｜Bai de Dones（52 號招呼站）攔 52 → 14:55 抵 Cortina Scuole → 15:20 搭 30 號 → 15:34 回 San Vito。"],
+  sched:[
+    ["🚌","09:16","30 號 San Vito Centro → 09:30 抵 Cortina Scuole（留 30 分緩衝）"],
+    ["🚌","10:00","53 號 Cortina → 10:40 抵 Passo Giau（2,236 m）"],
+    ["🥾","","443 步道從金字塔巨石走向五塔山（2–2.5 小時），五塔由小變大超震撼"],
+    ["🍽️","午餐","Rifugio Scoiattoli（松鼠山屋），露台正對五塔，招牌松露菇菇手工麵"],
+    ["📸","","繞五塔一圈、逛一戰露天博物館（壕溝、砲台、防空洞）"],
+    ["🚠","~13:00","Cinque Torri 開放式吊椅下山 → Bai de Dones（認明 To Bai de Dones）"],
+    ["🚌","~14:30","52 號（Falzarego 14:20 發車）→ 14:55 抵 Cortina｜招呼站，記得招手！"],
+    ["🚌","15:20","30 號 Cortina → 15:34 抵 San Vito"]
+  ],
   warn:"① 五塔山頂有兩條纜車，認明指標寫 To Bai de Dones 的那條才接得到公車，別坐到往 Fedare 的反方向。② Cinque Torri 是 52 號「招呼站」：52 從 Passo Falzarego 14:20 發車、約 14:30 經過 Cinque Torri，請提前到站牌招手、別卡點。備用 52 班次 16:20、18:20。",
-  tips:"五塔吊椅在 Cortina 區、Gardena Card 不含，現場買單程票。30／53／52 都用現金或 Dolomitibus app 付。",
+  tips:"🚌 30／53／52 都是 Dolomitibus（Veneto），用 Dolomitibus app 或現金付。五塔吊椅在 Cortina 區、Gardena Card 不含，現場買單程票。",
   links:[]},
 
  {n:"06",date:"7/10 (五)",b:"svc",base:"San Vito",title:"Tiffany 藍湖 Lago di Sorapis",
@@ -357,37 +417,73 @@ const D = [
         "交通｜San Vito 搭 30 號到 Cortina，轉 51 號（Cortina–Passo Tre Croci–Misurina，整點發車、約 23 分）在 Passo Tre Croci 下車（Sorapis 步道口）。",
         "健行｜走 215 號步道到 Rifugio Vandelli／Lago di Sorapis（Tiffany 藍高山湖），單程約 2 小時，沿途有鋼纜輔助的窄岩徑（不難但要專心），原路折返。",
         "回程｜Passo Tre Croci 搭 51 號回 Cortina（每小時 32 分過站，如 15:32／16:32），再轉 30 號回 San Vito。"],
+  sched:[
+    ["🍽️","07:30","民宿早餐"],
+    ["🚌","08:16","30 號 San Vito → Cortina"],
+    ["🚌","09:00","51 號 Cortina → Passo Tre Croci"],
+    ["🥾","","開始登山，215 步道約 2.5 小時抵 Rifugio Vandelli／Lago di Sorapis（Tiffany 藍高山湖，有鋼纜段）"],
+    ["🍽️","午餐","Rifugio Vandelli 蔬食三明治"],
+    ["🚌","16:32","51 號 Passo Tre Croci → Cortina"],
+    ["🍦","","Cortina 等車時吃 gelato"],
+    ["🚌","17:20","30 號 Cortina → San Vito"],
+    ["🍽️","晚餐","La Stua"]
+  ],
   warn:"📅 今天最重要的一件事：上 seceda.it 預約 7/13 的 Seceda 時段（前 3 天內開放，今天正好是第一天）。用 Gardena Card email 裡的卡號前 9 碼即可，不用等實體卡。建議訂早場。出門前先辦好再上山。",
-  tips:"Sorapis 7–8 月人潮多，越早走越清靜；鋼纜段下雨易濕滑。確切班次用 Google Maps／südtirolmobil 查 7/10 當天。",
+  tips:"🚌 這幾天（Cortina／San Vito 一帶）搭的都是 Dolomitibus（Veneto），不是南提洛的 Südtirolmobil → 用 Dolomitibus app 或現金付，班次查 dolomitibus.it。Sorapis 7–8 月人潮多，越早走越清靜；鋼纜段下雨易濕滑。",
   links:[]},
 
  {n:"07",date:"7/11 (六)",b:"sal",base:"Rifugio Salei 山屋",title:"跨山大移動 ＋ 上山住山屋",
-  chain:[{t:"p",v:"San Vito 07:41"},{t:"bus",v:"30"},{t:"p",v:"Cortina"},{t:"bus",v:"52"},{t:"p",v:"Passo Falzarego"},{t:"bus",v:"465"},{t:"p",v:"Corvara"},{t:"bus",v:"472"},{t:"p",v:"Passo Sella 11:22"},{t:"cab",v:"🚐 山屋接駁"},{t:"p",v:"Salei"}],
-  plan:["實測：全程地方公車約 3 小時 40 分、不用任何預訂，最推薦 07:41 → 11:22 這班。",
-        "07:41｜30 號 San Vito → Cortina。",
-        "轉 52 號 Cortina → Passo Falzarego。",
-        "轉 465 號 Passo Falzarego → Corvara（Alta Badia）。",
-        "轉 472 號 Corvara → Passo Sella，11:22 抵達。",
-        "到 Passo Sella｜直接打電話給 Rifugio Salei，他們會來公車站接你上山屋（已 email 確認 OK，不用搭吊椅了）。入住享 SPA／桑拿。"],
-  warn:"不是 Cortina Express（在那邊查 Cortina→Corvara 也查無班次是正常的）。30／52 是 Dolomitibus、465／472 是 SAD／Südtirolmobil，全都不用預訂：各自 app 買或上車付現（帶足現金）。要換 4 次車，最需盯 Passo Falzarego（52→465）與 Corvara（465→472）兩個接點；行李多，抓 07:41 早班最保險，漏一班約一小時後有下一班。",
-  tips:"認 472 是進 Passo Sella 的關鍵班次（有些班多繞 473，時間差不多）。出發前一晚用 Google Maps 複查 7/11、截圖各段站名時刻；南提洛側用 südtirolmobil 看即時。抵 Passo Sella 記得打給山屋接駁（電話在 Gmail 訂房信裡）。🩱 記得帶泳衣——山屋有室內外相通的溫水泳池（要穿泳衣）；桑拿/蒸氣室是歐式，習慣裹浴巾。",
+  chain:[{t:"p",v:"San Vito 09:16"},{t:"bus",v:"30"},{t:"p",v:"Cortina"},{t:"bus",v:"52 · 10:00"},{t:"p",v:"Falzarego"},{t:"bus",v:"465 · 10:45"},{t:"p",v:"Corvara"},{t:"bus",v:"472 · 11:35"},{t:"p",v:"Passo Sella"},{t:"cab",v:"🚐 山屋接駁"},{t:"p",v:"Salei"}],
+  sched:[
+    ["🍽️","07:45","民宿早餐"],
+    ["🚌","09:16","30 號 San Vito → Cortina"],
+    ["🚌","10:00","52 號 Cortina → Passo Falzarego"],
+    ["🚌","10:45","465 號 Passo Falzarego → Corvara（Alta Badia）"],
+    ["🚌","11:35","472 號 Corvara → Passo Sella"],
+    ["📞","抵達","打電話給 Rifugio Salei，山屋來公車站接駁上山（已 email 確認）"],
+    ["🚠","14:30","Check-in 後從山屋走去搭 #18 纜車上 Forcella del Sassolungo，隘口附近晃晃"],
+    ["🚠","16:00","搭 #18 下山，慢慢走回山屋，途中看土撥鼠 🦫"],
+    ["🍽️","19:30","晚餐：Fienile Monte"],
+    ["🛏️","","山屋 SPA／桑拿（帶泳衣）"]
+  ],
+  warn:"⚠️ 換 4 次車，最需盯 Passo Falzarego（52→465）與 Corvara（465→472）兩個接點。行李多，各段留足轉車時間。全程不用預訂，但要帶現金：30／52 是 Dolomitibus（Veneto），465／472 是 SAD／Südtirolmobil（南提洛），兩套系統各自買票。",
+  tips:"認 472 是進 Passo Sella 的關鍵班次（有些班多繞 473）。出發前一晚用 Google Maps 複查 7/11 各段實際時刻。抵 Passo Sella 記得打給山屋接駁（電話在 Gmail 訂房信裡）。🩱 帶泳衣——山屋有室內外相通的溫水泳池（要穿泳衣）；桑拿／蒸氣室是歐式，習慣裹浴巾。",
   links:[["Südtirolmobil 查詢","https://www.suedtirolmobil.info/en/"]]},
 
- {n:"08",date:"7/12 (日)",b:"ort",base:"進駐 → Ortisei",title:"下山進駐 ＋ 下午上休斯高原",
-  chain:[{t:"p",v:"Salei"},{t:"cab",v:"🚐/🚠 下山"},{t:"p",v:"Passo Sella"},{t:"bus",v:"350"},{t:"p",v:"Ortisei"},{t:"cab",v:"#1 Alpe di Siusi"},{t:"p",v:"Alpe di Siusi"}],
-  plan:["上午｜Salei 吊椅（或請山屋協助）下 Passo Sella，搭 350 進 Ortisei，入住公寓、放行李。",
-        "下午｜鎮上直接搭 #1 Alpe di Siusi 箱型纜車上台地——歐洲最大高山草原、背景 Sassolungo，下午順光正好。平坦步道走向 Malga Sanon 拍照點，草原放牧牛鈴叮噹。",
-        "傍晚｜下山回 Ortisei，木雕小鎮慢活、Gelateria 冰淇淋。"],
-  warn:"這樣把休斯高原塞進移動日下午，就能空出一整天（Day 10）給富內斯山谷。前提是上午順利抵達 Ortisei；Alpe di Siusi 纜車夏季約開到 18:00，時間夠。",
-  tips:"#1 Ortisei–Alpe di Siusi 與 #2 Sole 都含 Gardena Card。",
-  links:[["移動通行證 LTS Pass","https://apps.lts.it/pass-by/?token=C%2ful5FFGEJDULGliHfF7m5mcGwVQ3s22XZ2vHqjLAHHIJpHCtGecskxDGURORWyrXQAl1tphKK8yN%2bG3RXw5DNbOm8GzbCblCPaI2qbPOTw4HJ%2fGt%2bxTS2VoZb778RyKq%2bcK8091XK5ogUgh0YzkAg%3d%3d"],["Ortisei 訂房（muse.holiday）","https://www.muse.holiday/en/dolomites/weboffer/?key=942ef7f3-9fb4-4757-a01f-aac281998bab#booking"],["西區攻略 tings.tw","https://tings.tw/dolomiti-2/"]]},
+   {n:"08",date:"7/12 (日)",b:"ort",base:"進駐 → Ortisei",title:"Sassolungo 短環線（525/526）＋ #16/#17 來回 ＋ 石頭城",
+  chain:[{t:"p",v:"Salei"},{t:"cab",v:"#18"},{t:"p",v:"Forcella"},{t:"trl",v:"525"},{t:"p",v:"Vicenza"},{t:"trl",v:"526"},{t:"p",v:"Comici"},{t:"cab",v:"#17⇄#16"},{t:"trl",v:"526 石頭城"},{t:"p",v:"Passo Sella 取行李"},{t:"bus",v:"471→350"},{t:"p",v:"Ortisei"}],
+  sched:[
+    ["🧳","","早餐後行李寄 Salei 山屋（或請山屋送到 Passo Sella，先問）"],
+    ["🚠","08:30","#18 上 Forcella del Sassolungo（2,685 m），早班陡降段最安全、人少"],
+    ["🥾","","525 陡降 → Rifugio Vicenza（1–1.5h）⚠️ 碎石陡坡、專心走、登山杖"],
+    ["🥾","","526 → Col de Mesdì → 沿 Sassolungo 北壁（1.5–2h）"],
+    ["🍽️","午餐","Rifugio Comici（藍白露台正對絕壁，有精緻蔬食）"],
+    ["🚶","","Comici 走 20–30 分到 #17 上站"],
+    ["🚠","","#17 Gran Paradiso → #16 Piz Setëur 搭下山，不出站再搭回來（來回體驗，含 Gardena Card 不加錢）"],
+    ["🥾","","從 Comici 側順走 526 穿石頭城（Città dei Sassi）緩降 ~45 分 → Passo Sella"],
+    ["🧳","~15:30","Passo Sella 取行李（終點就在山屋腳下，免搭公車）"],
+    ["🚌","","471 → Plan de Gralba 轉 350 → Ortisei，入住公寓"],
+    ["🍦","傍晚","木雕小鎮慢活、Gelateria 冰淇淋"]
+  ],
+  warn:"全程約 6–7 小時（純走路 4–4.5h、爬升 ~250m、下降 ~800m）。⚠️ 525 陡降段是山難救援熱點：出發前問山屋當天步道狀況（殘雪／濕滑），穿登山鞋、帶杖。#16/#17 來回若排隊太長，可改單程下山＋471 一站回 Passo Sella（備案）。",
+  tips:"#16／#17 含 Gardena Card（今天啟用剛好），來回搭不加錢。#18 昨天已體驗、今天當上山電梯。休斯高原已移到 Day 12。",
+  links:[["移動通行證 LTS Pass","https://apps.lts.it/pass-by/?token=C%2ful5FFGEJDULGliHfF7m5mcGwVQ3s22XZ2vHqjLAHHIJpHCtGecskxDGURORWyrXQAl1tphKK8yN%2bG3RXw5DNbOm8GzbCblCPaI2qbPOTw4HJ%2fGt%2bxTS2VoZb778RyKq%2bcK8091XK5ogUgh0YzkAg%3d%3d"],["Ortisei 訂房（muse.holiday）","https://www.muse.holiday/en/dolomites/weboffer/?key=942ef7f3-9fb4-4757-a01f-aac281998bab#booking"]]},
 
- {n:"09",date:"7/13 (一)",b:"ort",base:"Ortisei",title:"Seceda 刀背山（西區核心）",
+{n:"09",date:"7/13 (一)",b:"ort",base:"Ortisei",title:"Seceda 刀背山（西區核心）",
   chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#4 Furnes"},{t:"cab",v:"#5 Seceda"},{t:"p",v:"Seceda 2500m"},{t:"trl",v:"稜線步道"},{t:"cab",v:"#6 Fermeda"},{t:"cab",v:"#7 Col Raiser"},{t:"p",v:"S. Cristina"}],
   plan:["可把 Seceda 這區的 #4–#7 一次搭齊。",
         "上山（兩段）｜#4 Ortisei–Furnes（吊廂）→ 轉 #5 Furnes–Seceda（更陡的大纜車），約 15 分直上 2,500 m 刀背稜線。",
         "出站即明信片上的刀背絕壁。沿稜線步道緩降經 Mastlè 一帶，散落古老木造牧場山屋（Malga）；中午蔬食在 Rifugio Odle 或 Malga Pieralongia（高山野菇波倫塔＋接骨木花氣泡飲 Hugo），躺草皮看雙子石塔（兔耳岩）。",
         "下山｜接 #6 Fermeda 吊椅 → #7 Col Raiser 纜車下到 Santa Cristina，轉 350／352 回 Ortisei。"],
+  sched:[
+    ["⏱️","","※ Seceda 需前 3 天內預約時段（7/10 已辦）"],
+    ["🚠","早場","#4 Ortisei–Furnes → #5 Furnes–Seceda，15 分直上 2,500 m 刀背稜線"],
+    ["📸","","出站即明信片刀背絕壁，建議訂早場、幾乎可包場"],
+    ["🥾","","沿稜線步道緩降經 Mastlè，散落古老木造牧場山屋（Malga）"],
+    ["🍽️","午餐","Rifugio Odle 或 Malga Pieralongia：高山野菇波倫塔＋接骨木花氣泡飲（Hugo）"],
+    ["🚠","下山","#6 Fermeda 吊椅 → #7 Col Raiser 下 Santa Cristina"],
+    ["🚌","","350／352 回 Ortisei"]
+  ],
   warn:"Seceda（#4／#5，含 Fermeda #6）不適用 SuperSummer，但有含在 Gardena Card。2026 起一律分時段，而且【只能在搭乘日前 3 天內】線上預約：到 seceda.it 輸入 Gardena Card 卡號前 9 碼、選日期時段（不另收費）。建議訂早場，刀背稜線幾乎可包場。",
   tips:"流程：線上買 Gardena Card → 抵達後到纜車站換實體卡 → 再上網預約 Seceda 時段。編號：#4 Ortisei–Furnes、#5 Furnes–Seceda、#6 Fermeda、#7 Col Raiser，皆含 Gardena Card。",
   links:[["Seceda 時段預約","https://www.seceda.it/en/summer"],
@@ -400,6 +496,14 @@ const D = [
         "San Giovanni in Ranui｜谷底草地上的洋蔥頭小教堂（招牌明信片照），付費進柵欄區拍照。",
         "想健行｜可從 Zanser Alm／Ranui 走一段 35 號 Adolf Munkel 步道，走在 Odle 巨壁正下方，風景一流。",
         "午餐｜San Pietro／Santa Maddalena 村裡用餐，下午搭 330 → 351 回 Ortisei（約 2 小時）。"],
+  sched:[
+    ["🚌","一早","351 號 Ortisei → Chiusa／Bressanone，轉 330 號進 Val di Funes（單程約 1h55m）"],
+    ["📸","","Santa Maddalena：走 Panorama 觀景步道，俯拍「教堂＋Odle 巨壁」經典構圖"],
+    ["📸","","San Giovanni in Ranui：谷底草地上的洋蔥頭小教堂（招牌明信片照，付費進柵欄區）"],
+    ["🥾","","可從 Zanser Alm／Ranui 走一段 35 號 Adolf Munkel 步道，走在 Odle 巨壁正下方"],
+    ["🍽️","午餐","San Pietro／Santa Maddalena 村裡用餐"],
+    ["🚌","下午","330 → 351 回 Ortisei（約 2 小時）｜務必抓好回程末班"]
+  ],
   warn:"這是西區四天裡唯一的長程通勤日（來回約 4 小時）：一早出發、務必抓好回程末班。無自駕就這條 351→330 最順，確切班次用 Südtirolmobil 查當天。",
   tips:"把休斯高原挪到 7/12 下午，才空出這一整天給富內斯。這天沒有 Val Gardena 纜車，用不到 Gardena Card。",
   links:[]},
@@ -410,26 +514,44 @@ const D = [
         "上午（Ciampinoi 串）｜S. Cristina 搭 #8 Monte Pana（紅蘑菇雕塑）→ #9 Mont Sëura（朝 Sassolungo）→ 平路 15 分（牛群多）→ #10 Tramans → 小上坡 → #11 Ciampinoi 下山回 Selva。#12 Piza Pransëies 可從 Ciampinoi 單線來回加搭。",
         "下午（Passo Gardena 串）｜Selva 這側上 #13 Dantercëpies → #14 Cir 到 Passo Gardena，看 Cir／Sella 山群與雄偉隘口；#15 Costabella（Selva La Bula，單程）也在這一帶，可走下坡步道接回 #13。",
         "回程｜Passo Gardena 搭 473，或 Ciampinoi／Selva 搭 350／352 回 Ortisei。"],
+  sched:[
+    ["🚌","","350／352 → Santa Cristina"],
+    ["🚠","上午","#8 Monte Pana（紅蘑菇雕塑）→ #9 Mont Sëura（朝 Sassolungo）"],
+    ["🥾","","平路走 15 分（牛群多）→ #10 Tramans → 小上坡"],
+    ["🚠","","#11 Ciampinoi 下山回 Selva（#12 Piza Pransëies 可單線加搭）"],
+    ["🚠","下午","#13 Dantercëpies → #14 Cir 到 Passo Gardena，看 Cir／Sella 山群（#15 Costabella 也在這帶）"],
+    ["🚌","回程","Passo Gardena 搭 473，或 Selva 搭 350／352 回 Ortisei"]
+  ],
   warn:"#8–15 共 8 條、橫跨 S. Cristina→Selva→Passo Gardena，全搭完是很滿的一天。建議上午先把 #8–11（最精華、幾乎散步）走好，下午 #13–15 再看時間體力決定。全部含 Gardena Card。",
   tips:"提醒：Day 11（#8–15）和 Day 12（石頭城 #16–18）都繞著 Sassolungo，是同一座山的不同角度——喜歡就很過癮。已對照你提供的纜車圖。",
   links:[]},
 
- {n:"12",date:"7/16 (四)",b:"ort",base:"Ortisei",title:"Sassolungo 石頭城 · 纜車 #16–18",
-  chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350"},{t:"p",v:"Plan de Gralba"},{t:"cab",v:"#16 Piz Setëur"},{t:"cab",v:"#17 Gran Paradiso"},{t:"trl",v:"526"},{t:"cab",v:"#18 棺材吊廂"},{t:"p",v:"Passo Sella"}],
-  plan:["交通｜350／352 公車到 Plan de Gralba。",
-        "#16 Piz Setëur 纜車 → #17 Gran Paradiso 吊椅：出站接 526 號步道穿越科幻感十足的『石頭城』（Città dei Sassi），身邊全是幾層樓高的巨石。中午在 Rifugio Comici（時尚山屋、精緻蔬食、藍白露台正對絕壁）。",
-        "#18 Forcella del Sassolungo｜從 #17 走到 Passo Sella，搭『棺材』吊廂深入 Sassolungo 山心（Toni Demetz 山屋，一車 1–2 人、很刺激）。",
-        "回程｜Passo Sella 對面公車站搭 471 回 Selva／Ortisei。"],
-  warn:"末班 471 從 Passo Sella 回 Selva／Ortisei 約 18:00（每 30 分一班），別錯過。",
-  tips:"#16／#17／#18 皆含在 Gardena Card。想更深入可走 Sassolungo 環線，但那要預留一整天。",
+  {n:"12",date:"7/16 (四)",b:"ort",base:"Ortisei",title:"Alpe di Siusi 休斯高原 ＋ Ortisei 慢活",
+  chain:[{t:"p",v:"Ortisei"},{t:"cab",v:"#1 🚠"},{t:"p",v:"Alpe di Siusi"},{t:"trl",v:"WALK"},{t:"p",v:"Malga Sanon"},{t:"cab",v:"🚠"},{t:"p",v:"Ortisei 鎮上"}],
+  sched:[
+    ["🚠","上午","#1 Alpe di Siusi 箱型纜車上台地——歐洲最大高山草原、背景 Sassolungo（錯峰早點上）"],
+    ["🥾","","全程無障礙平坦步道走向黃金拍照點 Malga Sanon，草原放牧牛鈴叮噹"],
+    ["🍽️","午餐","找視野最好的木屋餐廳：松露燉飯＋在地水果派"],
+    ["🚠","下午","纜車下山回 Ortisei"],
+    ["🍦","","木雕小鎮慢活：石磚步行街手工皂／保養品、Gelateria、噴泉旁看山城黃昏"],
+    ["🍽️","晚餐","Mauriz Keller（手工披薩、招牌菇菇麵；週二公休）或回公寓自煮"]
+  ],
+  warn:"石頭城＋#16–18 已在 Day 7–8 完成，今天是 Ortisei 最後一個完整日，輕鬆收尾。",
+  tips:"#1 Ortisei–Alpe di Siusi 與 #2 Sole 含 Gardena Card（今天是 3 日卡最後一天，剛好用好用滿）；台地上另一家業者的小吊椅不含，通常用不到。",
   links:[]},
 
- {n:"13",date:"7/17 (五)",b:"trn",base:"米蘭近郊",title:"離山拉車：前往 Malpensa（近機場）",
+{n:"13",date:"7/17 (五)",b:"trn",base:"米蘭近郊",title:"離山拉車：前往 Malpensa（近機場）",
   chain:[{t:"p",v:"Ortisei"},{t:"bus",v:"350 · ~07:30"},{t:"p",v:"Bolzano ~08:30"},{t:"bus",v:"FlixBus 09:15"},{t:"p",v:"Malpensa T1 13:40"}],
   plan:["建議｜搭約 07:30 從 Ortisei（Piazza S. Antonio）出發的 350，車程約 56 分、約 08:30 到 Bolzano，留約 45 分接 09:15 的 FlixBus。350 約每小時一班、最早約 06:26。",
         "注意｜350 停 Bolzano 巴士總站（Autostazione），但 FlixBus 從『Bolzano South／Stazione FS（火車站）』發車，兩處步行約 5 分鐘，到場先確認 FlixBus 上車點。",
         "09:15｜Bolzano South 搭 FlixBus → 13:40 抵 Milano Malpensa Terminal 1。",
         "入住 Ca' del Borgo（Vizzola Ticino，近 Malpensa，約 $4,900+），方便隔天清晨班機。"],
+  sched:[
+    ["🚌","~07:30","350 號 Ortisei（Piazza S. Antonio）→ 約 08:30 抵 Bolzano（約 56 分）"],
+    ["🚶","","350 停巴士總站，FlixBus 從火車站（Bolzano South／Stazione FS）發車，步行約 5 分"],
+    ["🚌","09:15","FlixBus → 13:40 抵 Milano Malpensa Terminal 1【已付款】"],
+    ["🛏️","","入住 Ca' del Borgo（Vizzola Ticino，近 Malpensa）"]
+  ],
   warn:"350 確切分鐘以 Südtirolmobil 當日時刻為準；行李多又要轉 FlixBus，保險起見可提早一班（約 06:30）多留緩衝。",
   tips:"FlixBus 訂位 #3366672372 · 乘客 Wan Tai Wu／Yu Ling Huang · 已付（信用卡）。",
   links:[["飯店 Ca' del Borgo","https://www.booking.com/hotel/it/ca-del-borgo-vizzola-ticino1.zh-tw.html"]]},
@@ -438,6 +560,10 @@ const D = [
   chain:[{t:"p",v:"MXP 06:50"},{t:"fly",v:"TK1878"},{t:"p",v:"IST"},{t:"fly",v:"TK124"},{t:"p",v:"TPE 08:05⁺¹"}],
   plan:["06:50｜米蘭 Malpensa MXP 起飛（TK1878），經伊斯坦堡 IST 轉機。",
         "次日（7/19）08:05｜抵桃園 TPE，全程 19h15m，經濟艙 (W)。"],
+  sched:[
+    ["✈️","06:50","TK1878 米蘭 Malpensa MXP 起飛 → 伊斯坦堡 IST 轉機"],
+    ["✈️","08:05⁺¹","TK124 抵桃園 TPE（7/19，全程 19h15m，經濟艙 W）"]
+  ],
   tips:"清晨班機，前一晚住 Malpensa 旁的 Ca' del Borgo 最穩。",
   links:[]},
 ];
@@ -453,11 +579,11 @@ const MAPS={
  "05":[["Passo Giau","Passo Giau"],["Rifugio Scoiattoli","Rifugio Scoiattoli Cinque Torri"],["住宿 San Vito","https://maps.app.goo.gl/utAkPzKHf4qYcUJp6?g_st=ic"]],
  "06":[["Lago di Sorapis","Lago di Sorapis Rifugio Vandelli"],["Passo Tre Croci","Passo Tre Croci Cortina"],["住宿 San Vito","https://maps.app.goo.gl/utAkPzKHf4qYcUJp6?g_st=ic"]],
  "07":[["Passo Sella","Passo Sella"],["住宿 Rifugio Salei","Rifugio Salei Passo Sella"]],
- "08":[["Alpe di Siusi 纜車","Ortisei Alpe di Siusi cabinovia"],["Malga Sanon","Malga Sanon Alpe di Siusi"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "08":[["Rifugio Vicenza","Rifugio Vicenza Langkofelhutte"],["Rifugio Comici","Rifugio Comici Sassolungo"],["石頭城 Città dei Sassi","Citta dei Sassi Passo Sella"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
  "09":[["Seceda","Seceda Ortisei"],["🌱 Sanybon 蔬食早午餐","Sanybon Ortisei"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
  "10":[["San Giovanni in Ranui","San Giovanni in Ranui Villnoss"],["Santa Maddalena","Santa Maddalena Funes"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
  "11":[["Monte Pana","Monte Pana Santa Cristina"],["Passo Gardena","Passo Gardena Grodner Joch"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
- "12":[["Rifugio Comici","Rifugio Comici Sassolungo"],["🍕 Mauriz Keller 披薩/菇菇麵","Mauriz Keller Ortisei"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
+ "12":[["Alpe di Siusi 纜車","Ortisei Alpe di Siusi cabinovia"],["Malga Sanon","Malga Sanon Alpe di Siusi"],["🍕 Mauriz Keller 披薩/菇菇麵","Mauriz Keller Ortisei"],["住宿 Ortisei","https://maps.app.goo.gl/JsR9AQvW3QVzjdjc7?g_st=ic"]],
  "13":[["Milano Malpensa T1","Milano Malpensa Terminal 1"],["住宿 Ca' del Borgo","https://maps.app.goo.gl/nGn7n3wdTADXbYXAA?g_st=ic"]],
  "14":[["Milano Malpensa","Milano Malpensa Airport"]],
 };
@@ -477,10 +603,13 @@ function chainHTML(ch){
 
 const root=document.getElementById("days");
 root.innerHTML = D.map(d=>{
-  const plan = d.plan.map(p=>{
+  const plan = (d.plan||[]).map(p=>{
     const m = p.match(/^([^｜]+)｜(.*)$/);
     return m ? `<li><span class="t">${m[1]}</span>${m[2]}</li>` : `<li>${p}</li>`;
   }).join("");
+  const schedHTML = d.sched ? `<ul class="sched">${d.sched.map(x=>
+    `<li><span class="si">${x[0]}</span><span class="st">${x[1]||""}</span><span class="sx">${x[2]}</span></li>`).join("")}</ul>` : "";
+  const bodyPlan = d.sched ? schedHTML : `<ul class="plan">${plan}</ul>`;
   const mapItems = (MAPS[d.n]||[]);
   const mapHTML = mapItems.map(m=>{
     const href = /^https?:/.test(m[1]) ? m[1] : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m[1])}`;
@@ -505,7 +634,7 @@ root.innerHTML = D.map(d=>{
     </summary>
     <div class="dbody">
       <div class="chain">${chainHTML(d.chain)}</div>
-      <ul class="plan">${plan}</ul>
+      ${bodyPlan}
       ${row}${warn}${links}
     </div>
   </details>`;
