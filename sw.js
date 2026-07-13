@@ -1,10 +1,12 @@
-const CACHE = 'dolomites-v3';
+const CACHE = 'dolomites-v5';
+const BASE = '/2026-Dolomites/';
 const ASSETS = [
-  './dolomites-itinerary.html',
-  './manifest.json',
-  './apple-touch-icon.png',
-  './icon-192.png',
-  './icon-512.png'
+  BASE,
+  BASE + 'index.html',
+  BASE + 'manifest.json',
+  BASE + 'apple-touch-icon.png',
+  BASE + 'icon-192.png',
+  BASE + 'icon-512.png'
 ];
 
 self.addEventListener('install', e => {
@@ -24,12 +26,11 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
-  // network-first, fall back to cache (so updates land, offline still works)
   e.respondWith(
     fetch(req).then(res => {
       const copy = res.clone();
       caches.open(CACHE).then(c => c.put(req, copy)).catch(()=>{});
       return res;
-    }).catch(() => caches.match(req).then(r => r || caches.match('./dolomites-itinerary.html')))
+    }).catch(() => caches.match(req).then(r => r || caches.match(BASE + 'index.html')))
   );
 });
