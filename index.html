@@ -219,6 +219,13 @@
   .check b{color:var(--glow-soft);}
   footer{text-align:center;color:var(--slate);font-size:12.5px;
     font-family:var(--mono);letter-spacing:.04em;padding-top:14px;}
+  footer .credit{margin-bottom:14px;}
+  footer .series-link{display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--body);font-size:14px;font-weight:600;color:var(--ink);
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:9px 18px;text-decoration:none;transition:border-color .15s;}
+  footer .series-link:hover{border-color:var(--glow);}
+  footer .series-link::after{content:"→";font-family:var(--mono);color:var(--glow);}
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
@@ -298,7 +305,10 @@
   <!-- DAYS -->
   <div class="days" id="days"></div>
 
-  <footer>整理自 Notion「旅行日記」＋ 訂位票券 · Day 0–14</footer>
+  <footer>
+    <div class="credit">Huang Yu-Ling, Wu Wan Tai 整理 · Day 0–14</div>
+    <a class="series-link" href="https://yuling-clinic.github.io/dr_huang/articles.html?cat=life&series=%E5%A4%9A%E6%B4%9B%E7%B1%B3%E8%92%82" target="_blank" rel="noopener">多洛米蒂系列文章</a>
+  </footer>
 
 </div>
 
